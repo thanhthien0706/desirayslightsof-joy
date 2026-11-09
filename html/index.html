@@ -19,7 +19,8 @@
       </span>
       <div class="theme-toggle-wrap">
         <button id="nightModeToggle" class="theme-toggle-btn" aria-label="Toggle Warm Evening Glow Mode" title="Toggle Evening Ambient Mode">
-          <span>💡 Evening Glow</span>
+          <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.4.3.6.8.6 1.3V16h6v-.9c0-.5.2-1 .6-1.3A6 6 0 0 0 12 3Z"/></svg>
+          <span>Evening Glow</span>
         </button>
       </div>
     </div>
@@ -42,7 +43,8 @@
 
       <div class="header-actions">
         <a href="/donate" class="btn btn-donate btn-neon-glow" id="headerDonateBtn">
-          <span>💖 Donate</span>
+          <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
+          <span>Donate</span>
         </a>
         <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span class="bar"></span>
@@ -80,15 +82,15 @@
 
           <div class="hero-trust-bar">
             <div class="trust-item">
-              <span>🏥</span>
+              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12"/><path d="M12 11v6M9 14h6"/></svg>
               <span>Rady Children&rsquo;s Hospital San Diego</span>
             </div>
             <div class="trust-item">
-              <span>🛡️</span>
+              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
               <span>501(c)(3) Tax-Deductible</span>
             </div>
             <div class="trust-item">
-              <span>💖</span>
+              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
               <span>100% Family &amp; Volunteer Run</span>
             </div>
           </div>
@@ -96,7 +98,7 @@
 
         <!-- AUTHENTIC PHOTOGRAPHY FRAME -->
         <div class="hero-visual-frame">
-          <div class="hero-photo-card">
+          <div class="hero-photo-card tilt-left">
             <div class="hero-photo-wrapper">
               <img src="assets/images/desiray-hospital-bedside.png" alt="Desiray at Rady Children's Hospital with her personalized neon sign and heart light" class="hero-real-img">
               <span class="hero-photo-badge">The Original Keepsake</span>
@@ -107,7 +109,7 @@
             </div>
 
             <!-- Soft illustrated mascot sticker -->
-            <div class="hero-mascot-sticker">
+            <div class="hero-mascot-sticker tilt-right">
               <img src="assets/images/buffalo-girl-plush.png" alt="The Pink Buffalo Girl" class="sticker-thumb">
               <div class="sticker-text">
                 <strong>Pink Buffalo Girl</strong>
@@ -119,14 +121,31 @@
       </div>
     </section>
 
+    <!-- STRING-OF-LIGHTS DIVIDER -->
+    <div class="lights-divider" aria-hidden="true">
+      <svg viewBox="0 0 760 46" preserveAspectRatio="xMidYMid meet">
+        <path d="M0 10 C 95 40, 190 40, 285 10 S 475 -20, 570 10 S 665 40, 760 10" fill="none" style="stroke: var(--border-subtle);" stroke-width="2"/>
+        <circle class="bulb" cx="20" cy="12" r="6" fill="#ffd166"/>
+        <circle class="bulb" cx="130" cy="32" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="240" cy="18" r="6" fill="#ffd166"/>
+        <circle class="bulb" cx="350" cy="6" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="455" cy="20" r="6" fill="#ffd166"/>
+        <circle class="bulb" cx="565" cy="32" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="670" cy="14" r="6" fill="#ffd166"/>
+        <circle class="bulb" cx="745" cy="6" r="6" fill="#e60067"/>
+      </svg>
+    </div>
+
     <!-- ABOUT US / DESIRAY'S STORY SECTION -->
     <section class="story-section" id="about-us">
       <span id="story"></span>
       <div class="container">
-        <div class="text-center" style="text-align: center;">
-          <span class="eyebrow">The Heart of Our Foundation</span>
-          <h2 class="section-heading">Meet Desiray Joy &mdash; <em>Our Beloved Pink Buffalo Girl</em></h2>
-          <p class="section-lead">
+        <div class="split-header">
+          <div>
+            <span class="kicker">The Heart of Our Foundation</span>
+            <h2 class="section-heading">Meet Desiray Joy &mdash; <em>Our Beloved Pink Buffalo Girl</em></h2>
+          </div>
+          <p class="split-header-lead">
             A daughter with Down syndrome, an unshakeable spirit, and an enduring legacy of bringing light into the dark.
           </p>
         </div>
@@ -168,6 +187,12 @@
             </div>
           </div>
         </div>
+
+        <blockquote class="pull-quote">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p>Her favorite color in the whole world was bright pink &mdash; and that one glowing sign turned a hospital room into a sanctuary.</p>
+          <cite>From Marlene&rsquo;s Letter, Founder</cite>
+        </blockquote>
       </div>
     </section>
 
@@ -175,35 +200,39 @@
     <section class="how-it-works-section" id="what-we-do">
       <span id="how-it-works"></span>
       <div class="container">
-        <div style="text-align: center;">
-          <span class="eyebrow">How Your Gift Works</span>
-          <h2 class="section-heading">From Hospital Admission to <em>Forever Keepsake</em></h2>
-          <p class="section-lead">A simple, transparent journey connecting donors directly to bedside comfort.</p>
+        <div class="split-header">
+          <p class="split-header-lead">A simple, transparent journey connecting donors directly to bedside comfort &mdash; from the first referral to the day the light goes home.</p>
+          <div>
+            <span class="kicker">How Your Gift Works</span>
+            <h2 class="section-heading">From Hospital Admission to <em>Forever Keepsake</em></h2>
+          </div>
         </div>
 
-        <div class="steps-timeline-grid">
-          <div class="step-box">
-            <span class="step-count">Step 01</span>
-            <h4>Hospital Referral</h4>
-            <p>Compassionate social workers and nurses at Rady Children&rsquo;s Hospital identify young warriors admitted for transplant treatment.</p>
-          </div>
+        <div class="steps-flow">
+          <div class="steps-timeline-grid">
+            <div class="step-box">
+              <span class="step-count">Step 01</span>
+              <h4>Hospital Referral</h4>
+              <p>Compassionate social workers and nurses at Rady Children&rsquo;s Hospital identify young warriors admitted for transplant treatment.</p>
+            </div>
 
-          <div class="step-box">
-            <span class="step-count">Step 02</span>
-            <h4>Personalized Design</h4>
-            <p>We discover each child&rsquo;s favorite color and nickname. Local artisans craft a safe, low-voltage 30&Prime; LED neon sign tailored specifically to them.</p>
-          </div>
+            <div class="step-box">
+              <span class="step-count">Step 02</span>
+              <h4>Personalized Design</h4>
+              <p>We discover each child&rsquo;s favorite color and nickname. Local artisans craft a safe, low-voltage 30&Prime; LED neon sign tailored specifically to them.</p>
+            </div>
 
-          <div class="step-box">
-            <span class="step-count">Step 03</span>
-            <h4>Bedside Illumination</h4>
-            <p>We deliver the light with an optional rechargeable battery so the child can keep their sign glowing even during corridor walks with IV poles.</p>
-          </div>
+            <div class="step-box">
+              <span class="step-count">Step 03</span>
+              <h4>Bedside Illumination</h4>
+              <p>We deliver the light with an optional rechargeable battery so the child can keep their sign glowing even during corridor walks with IV poles.</p>
+            </div>
 
-          <div class="step-box">
-            <span class="step-count">Step 04</span>
-            <h4>Home Sweet Home</h4>
-            <p>When treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang proudly as a lifelong medal of bravery.</p>
+            <div class="step-box">
+              <span class="step-count">Step 04</span>
+              <h4>Home Sweet Home</h4>
+              <p>When treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang proudly as a lifelong medal of bravery.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -212,16 +241,19 @@
     <!-- LIGHTS WE HAVE DONATED SO FAR (preview — full gallery on what_we_do.html) -->
     <section class="gallery-section" id="gallery">
       <div class="container">
-        <div style="text-align: center;">
-          <span class="eyebrow">Our Young Warriors</span>
-          <h2 class="section-heading">Lights We Have <em>Donated So Far</em></h2>
-          <p class="section-lead">
+        <div class="split-header">
+          <div>
+            <span class="kicker">Our Young Warriors</span>
+            <h2 class="section-heading">Lights We Have <em>Donated So Far</em></h2>
+          </div>
+          <p class="split-header-lead">
             A glimpse of the personalized neon signs we&rsquo;ve gifted to pediatric patients at Rady Children&rsquo;s Hospital. Click any light for a closer look.
+            <br><a href="/what_we_do" class="text-link-arrow">View the Full Gallery &rarr;</a>
           </p>
         </div>
 
-        <div class="lights-card-grid">
-          <div class="real-light-card">
+        <div class="lights-card-grid bento">
+          <div class="real-light-card featured">
             <img src="assets/images/what-we-do/lily.jpg" alt="Lily's personalized neon sign" loading="lazy">
             <div class="real-light-name">Lily</div>
           </div>
@@ -233,7 +265,7 @@
             <img src="assets/images/what-we-do/gonebey.jpg" alt="Gonebey's personalized neon sign" loading="lazy">
             <div class="real-light-name">Gonebey</div>
           </div>
-          <div class="real-light-card">
+          <div class="real-light-card featured">
             <img src="assets/images/what-we-do/zachary.jpg" alt="Zachary's personalized neon sign" loading="lazy">
             <div class="real-light-name">Zachary</div>
           </div>
@@ -245,10 +277,6 @@
             <img src="assets/images/what-we-do/jacob.jpg" alt="Jacob's personalized neon sign" loading="lazy">
             <div class="real-light-name">Jacob E.</div>
           </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 12px;">
-          <a href="/what_we_do" class="btn btn-secondary btn-large">View More &rarr;</a>
         </div>
       </div>
     </section>
@@ -272,7 +300,7 @@
                 </div>
                 <div class="tier-info-box">
                   <h5>Complete Warrior Care Set</h5>
-                  <p>1 Personalized 30&Prime; Neon Sign 💡 + 1 Rechargeable Medical-Grade Battery 🔋 for hallway mobility.</p>
+                  <p>1 Personalized 30&Prime; Neon Sign + 1 Rechargeable Medical-Grade Battery for hallway mobility.</p>
                 </div>
               </div>
 
@@ -329,7 +357,8 @@
             </div>
 
             <div class="security-trust-note">
-              🛡️ Official 501(c)(3) Tax-Deductible Charity
+              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
+              Official 501(c)(3) Tax-Deductible Charity
             </div>
           </div>
         </div>
@@ -374,7 +403,8 @@
               </div>
 
               <button type="submit" class="btn btn-primary btn-neon-glow" style="width: 100%;">
-                Post Message to Wall of Hope 💖
+                <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
+                <span>Post Message to Wall of Hope</span>
               </button>
             </form>
           </div>
@@ -388,29 +418,35 @@
 
     <!-- CONTACT SECTION -->
     <section class="story-section" id="contact" style="border-top: 1px solid var(--border-subtle);">
-      <div class="container">
-        <div style="max-width: 680px; margin: 0 auto; text-align: center;">
-          <span class="eyebrow">Get In Touch</span>
-          <h2 class="section-heading">Connect with <em>Our Board</em></h2>
-          <p class="section-lead" style="margin-bottom: 32px;">
+      <div class="container" style="max-width: 1000px;">
+        <div class="split-header" style="margin-bottom: 40px;">
+          <div>
+            <span class="kicker">Get In Touch</span>
+            <h2 class="section-heading">Connect with <em>Our Board</em></h2>
+          </div>
+          <p class="split-header-lead">
             Have questions about sponsoring a patient, nominating a young warrior, or helping us expand to another hospital? We would love to hear from you.
           </p>
+        </div>
 
-          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 36px; box-shadow: var(--shadow-sm); text-align: left;">
-            <div style="margin-bottom: 20px;">
-              <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--rose-primary);">Email Marlene Directly</span>
-              <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-headline); margin: 4px 0 0;">
+        <div class="contact-split-grid">
+          <div class="contact-info-col">
+            <div class="contact-info-item">
+              <span class="contact-info-label">Email Marlene Directly</span>
+              <p class="contact-info-value">
                 <a href="mailto:marlene@desirayslightsofjoy.org">marlene@desirayslightsofjoy.org</a>
               </p>
             </div>
 
-            <div style="margin-bottom: 24px;">
-              <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--rose-primary);">Hospital Partner</span>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Hospital Partner</span>
               <p style="font-size: 1rem; color: var(--text-body); margin: 4px 0 0;">
                 Rady Children&rsquo;s Hospital &bull; Pediatric Bone Marrow &amp; Stem Cell Unit &bull; San Diego, CA
               </p>
             </div>
+          </div>
 
+          <div class="contact-form-card">
             <form id="contactForm">
               <div class="field-group">
                 <input type="text" id="cName" class="field-control" placeholder="Your Name" required>

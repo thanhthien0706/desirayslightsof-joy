@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <span class="note-time">${escapeHTML(msg.time || "Just now")}</span>
         </div>
-        ${msg.dedication ? `<span class="note-dedication-tag">💝 ${escapeHTML(msg.dedication)}</span>` : ""}
+        ${msg.dedication ? `<span class="note-dedication-tag">${escapeHTML(msg.dedication)}</span>` : ""}
         <p class="note-message">${escapeHTML(msg.body)}</p>
       `;
 
