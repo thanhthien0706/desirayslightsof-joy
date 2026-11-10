@@ -2535,12 +2535,12 @@ svg.icon-inline {
 }
 
 .kicker::before {
-  content: "";
+  /* content: "";
   display: inline-block;
   width: 26px;
   height: 2px;
   border-radius: 2px;
-  background-color: var(--rose-primary);
+  background-color: var(--rose-primary); */
 }
 
 .split-header {
