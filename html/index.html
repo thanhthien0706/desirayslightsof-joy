@@ -7,7 +7,7 @@
   <meta name="description" content="A 501(c)(3) nonprofit donating personalized 30-inch glowing neon signs and battery care kits to brave young warriors undergoing bone marrow and stem cell transplants at Rady Children's Hospital in San Diego.">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="dark">
+<body data-theme="light">
 
   <!-- TOP ANNOUNCEMENT BAR -->
   <aside class="announcement-bar">
@@ -18,9 +18,9 @@
         <a href="#gallery" class="announcement-link">Explore the Stories &rarr;</a>
       </span>
       <div class="theme-toggle-wrap">
-        <button id="nightModeToggle" class="theme-toggle-btn" aria-label="Toggle Warm Evening Glow Mode" title="Toggle Evening Ambient Mode">
+        <button id="nightModeToggle" class="theme-toggle-btn" aria-label="Toggle Lights Off Mode" title="Switch between soft pink and lights-off dark mode">
           <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.4.3.6.8.6 1.3V16h6v-.9c0-.5.2-1 .6-1.3A6 6 0 0 0 12 3Z"/></svg>
-          <span>Evening Glow</span>
+          <span>Lights Off</span>
         </button>
       </div>
     </div>
@@ -126,13 +126,13 @@
       <svg viewBox="0 0 760 46" preserveAspectRatio="xMidYMid meet">
         <path d="M0 10 C 95 40, 190 40, 285 10 S 475 -20, 570 10 S 665 40, 760 10" fill="none" style="stroke: var(--border-subtle);" stroke-width="2"/>
         <circle class="bulb" cx="20" cy="12" r="6" fill="#ffd166"/>
-        <circle class="bulb" cx="130" cy="32" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="130" cy="32" r="6" fill="#d6336f"/>
         <circle class="bulb" cx="240" cy="18" r="6" fill="#ffd166"/>
-        <circle class="bulb" cx="350" cy="6" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="350" cy="6" r="6" fill="#d6336f"/>
         <circle class="bulb" cx="455" cy="20" r="6" fill="#ffd166"/>
-        <circle class="bulb" cx="565" cy="32" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="565" cy="32" r="6" fill="#d6336f"/>
         <circle class="bulb" cx="670" cy="14" r="6" fill="#ffd166"/>
-        <circle class="bulb" cx="745" cy="6" r="6" fill="#e60067"/>
+        <circle class="bulb" cx="745" cy="6" r="6" fill="#d6336f"/>
       </svg>
     </div>
 
@@ -253,30 +253,30 @@
         </div>
 
         <div class="lights-card-grid bento">
-          <div class="real-light-card featured">
+          <a class="real-light-card featured" href="/light/lily">
             <img src="assets/images/what-we-do/lily.jpg" alt="Lily's personalized neon sign" loading="lazy">
             <div class="real-light-name">Lily</div>
-          </div>
-          <div class="real-light-card">
+          </a>
+          <a class="real-light-card" href="/light/cataleya">
             <img src="assets/images/what-we-do/cataleya.jpg" alt="Cataleya's personalized neon sign" loading="lazy">
             <div class="real-light-name">Cataleya</div>
-          </div>
-          <div class="real-light-card">
+          </a>
+          <a class="real-light-card" href="/light/gonebey">
             <img src="assets/images/what-we-do/gonebey.jpg" alt="Gonebey's personalized neon sign" loading="lazy">
             <div class="real-light-name">Gonebey</div>
-          </div>
-          <div class="real-light-card featured">
+          </a>
+          <a class="real-light-card featured" href="/light/zachary">
             <img src="assets/images/what-we-do/zachary.jpg" alt="Zachary's personalized neon sign" loading="lazy">
             <div class="real-light-name">Zachary</div>
-          </div>
-          <div class="real-light-card">
+          </a>
+          <a class="real-light-card" href="/light/alex">
             <img src="assets/images/what-we-do/alex.jpg" alt="Alex's personalized neon sign" loading="lazy">
             <div class="real-light-name">Alex</div>
-          </div>
-          <div class="real-light-card">
+          </a>
+          <a class="real-light-card" href="/light/jacob-e">
             <img src="assets/images/what-we-do/jacob.jpg" alt="Jacob's personalized neon sign" loading="lazy">
             <div class="real-light-name">Jacob E.</div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -337,7 +337,15 @@
           <!-- Real Giving Box: PayPal buttons + Zelle QR (matches donate.html) -->
           <div class="donation-interactive-box">
             <h4 class="form-box-title">Give Directly</h4>
-            <p class="form-box-sub">Tax-deductible 501(c)(3) contribution</p>
+            <p class="form-box-sub">Tax-deductible 501(c)(3) contribution &mdash; any amount welcome</p>
+
+            <p class="input-label" style="text-align: center; margin-bottom: 10px;">Not ready for a full light? Give what you can:</p>
+            <div class="amount-select-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 22px;">
+              <a href="#homeZelleQr" class="amount-tile" data-amount="5"><strong>$5</strong></a>
+              <a href="#homeZelleQr" class="amount-tile" data-amount="10"><strong>$10</strong></a>
+              <a href="#homeZelleQr" class="amount-tile" data-amount="25"><strong>$25</strong></a>
+              <a href="#homeZelleQr" class="amount-tile" data-amount="50"><strong>$50</strong></a>
+            </div>
 
             <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
               <a href="https://www.paypal.com/ncp/payment/ACYPDUG7N4VPY" target="_blank" rel="noopener" class="btn btn-primary btn-neon-glow pkg-btn" style="width: 100%;">
@@ -348,12 +356,13 @@
               </a>
             </div>
 
-            <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
-              Or donate through Zelle &mdash; scan to pay:
+            <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;" id="homeZelleQr">
+              Or donate any amount through Zelle &mdash; scan to pay:
             </p>
+            <p id="selectedAmountNote" style="text-align: center; font-size: 0.88rem; color: var(--rose-primary); font-weight: 700; min-height: 1.3em; margin-bottom: 10px;"></p>
 
-            <div style="max-width: 220px; margin: 0 auto 20px; background: #fff; border-radius: 16px; padding: 14px; box-shadow: var(--shadow-card);">
-              <img src="assets/images/zelle-qrcode.png" alt="Scan this Zelle QR code to pay Desiray's Lights of Joy" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+            <div style="max-width: 220px; margin: 0 auto 20px; background: #fff; border-radius: 9px; padding: 14px; box-shadow: var(--shadow-card);">
+              <img src="assets/images/zelle-qrcode.png" alt="Scan this Zelle QR code to pay Desiray's Lights of Joy" style="width: 100%; height: auto; display: block; border-radius: 6px;">
             </div>
 
             <div class="security-trust-note">
@@ -466,20 +475,6 @@
       </div>
     </section>
   </main>
-
-  <!-- LIGHT GALLERY LIGHTBOX -->
-  <div class="modal-overlay" id="lightLightbox" role="dialog" aria-modal="true" aria-labelledby="lightLightboxName" hidden>
-    <div class="modal-card" style="max-width: 640px; padding: 0; overflow: hidden;">
-      <button class="modal-close-btn" id="lightLightboxClose" aria-label="Close">&times;</button>
-      <img id="lightLightboxImg" src="" alt="" style="width: 100%; height: auto; display: block;">
-      <div style="padding: 24px;">
-        <h3 id="lightLightboxName" style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--rose-primary); margin-bottom: 8px;"></h3>
-        <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.6; margin: 0;">
-          This personalized 30&Prime; neon light was lovingly crafted and delivered to bring comfort, identity, and hope during treatment at Rady Children&rsquo;s Hospital &mdash; a small glowing reminder that every warrior is seen and loved.
-        </p>
-      </div>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">

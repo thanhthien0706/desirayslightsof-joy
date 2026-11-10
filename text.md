@@ -1,21 +1,13 @@
-đại khái là có 1 trang từ thiện của Mỹ, nhưng giao diện k đẹp, a muốn làm lại đẹp hơn
-nút donate khi hover có hiệu ứng sáng màu
-website này là để người ủng hộ và chủ site sẽ dùng để mua các đèn led cho trẻ em ung thư, đại khái thế
-em làm lại toàn bộ cho đẹp giúp anh dựa trên yêu cầu của họ
-Chị xin chia sẻ thêm 1 chút để em nắm vững sự tổ chức của Marlene qua website này.
-cô ấy thành lập tổ chức này để tưởng nhớ con gái mình, DesirayJoy.
+1. Redesign the website: Give it a more attractive, modern, and engaging look.
 
-Cô bé đã qua đời năm ngoái. Tổ chức này để gây quỹ để mua những chiếc đèn màu hồng màu yêu thích của con gái tặng các em nhỏ đang mắc bệnh nặng tại các bệnh viện nhi ở Mỹ với mong muốn mang đến cho các em thêm niềm vui và hy vọng.
-Marlene cũng rất thoải mái với ý tưởng thiết kế của em cô ấy chỉ mong website có tông màu hồng và logo hình chú trâu màu hồng.
+2. LED lighting theme: Use LED-style elements, such as glowing buttons, as visual highlights throughout the website.
 
-Phân bổ cục em cứ tự do sáng tạo miễn sao đơn giản dễ nhìn và dễ sử dụng để mọi người thuận tiện quyên góp.
+3. Color scheme: Use soft pink as the primary color. We could also add a "lights-off" mode that switches the website to a darker color scheme.
 
-Em nhớ đưa câu chuyện về con gái cô ấy mà Marlene đã gửi qua email vào website nhé!
+4. More donation options: Offer more donation amounts, such as $5, $10, $100, $200, and so on. Not everyone can afford to donate the current minimum amount. For example, even though I personally feel connected to your story, donating $200–$300 is quite a significant amount for me. I believe giving people more options would make it easier for everyone to contribute.
 
-Đây cũng chính là câu chuyện và lý do cô ấy thành lập tổ chức phi lợi nhuận này.
-tất cả thông tin anh đã đưa nhé
-làm lại cả bao gồm logo á
-anh muốn thêm 1 số tính năng như mọi người có thể để lại lời nhắn trên website
-đây là cá nhân của anh thôi
-mỗi hình led khi click vào sẽ đi tới câu chuyện của mỗi bé
-website hiện tại quá sơ sài và đơn giản
+5. Individual pages for each child: Each child could have their own dedicated page with a personal story, allowing visitors to learn more about them.
+
+6. Messages without donations: Allow visitors to leave messages of encouragement and support for the children without having to make a donation. I can build an AI-powered moderation system to filter out negative or inappropriate comments and only publish messages that are suitable.
+
+7. Accurate LED counter: Make sure the LED donation counter displays accurate, real-time figures.

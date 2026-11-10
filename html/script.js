@@ -6,17 +6,18 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
-  // 4. NIGHT / AMBIENT GLOW MODE TOGGLE
+  // 4. LIGHTS OFF MODE TOGGLE (soft pink by default, dark neon-glow mode on request)
   // ==========================================
   const nightModeToggles = [
     document.getElementById("nightModeToggle"),
     document.getElementById("nightModeToggleDonate"),
     document.getElementById("nightModeToggleAbout"),
     document.getElementById("nightModeToggleContact"),
-    document.getElementById("nightModeToggleWhatWeDo")
+    document.getElementById("nightModeToggleWhatWeDo"),
+    document.getElementById("nightModeToggleChild")
   ].filter(Boolean);
 
-  const savedTheme = localStorage.getItem("dloj_theme") || "dark";
+  const savedTheme = localStorage.getItem("dloj_theme") || "light";
   document.body.setAttribute("data-theme", savedTheme);
 
   nightModeToggles.forEach(btn => {
@@ -134,6 +135,20 @@ document.addEventListener("DOMContentLoaded", () => {
   loadMessages();
 
   // ==========================================
+  // 8b. QUICK AMOUNT TILES (donate.html — smaller gift options)
+  // ==========================================
+  const amountNote = document.getElementById("selectedAmountNote");
+  document.querySelectorAll(".amount-tile[data-amount]").forEach((tile) => {
+    tile.addEventListener("click", () => {
+      document.querySelectorAll(".amount-tile[data-amount]").forEach((t) => t.classList.remove("active"));
+      tile.classList.add("active");
+      if (amountNote) {
+        amountNote.textContent = `You selected $${tile.getAttribute("data-amount")} — send that amount below. Thank you!`;
+      }
+    });
+  });
+
+  // ==========================================
   // 9. MOBILE MENU & NAVIGATION
   // ==========================================
   const menuToggle = document.getElementById("menuToggle");
@@ -167,57 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 11. LIGHT GALLERY LIGHTBOX (click a light to view it larger)
+  // 11. LIGHT GALLERY CARDS now link straight to each child's own page
+  // (see child.html / child.js) instead of opening a lightbox.
   // ==========================================
-  const lightLightbox = document.getElementById("lightLightbox");
-  const lightLightboxImg = document.getElementById("lightLightboxImg");
-  const lightLightboxName = document.getElementById("lightLightboxName");
-  const lightLightboxClose = document.getElementById("lightLightboxClose");
-
-  function openLightLightbox(card) {
-    if (!lightLightbox) return;
-    const img = card.querySelector("img");
-    const name = card.querySelector(".real-light-name");
-    if (lightLightboxImg && img) {
-      lightLightboxImg.src = img.src;
-      lightLightboxImg.alt = img.alt;
-    }
-    if (lightLightboxName && name) {
-      lightLightboxName.textContent = name.textContent;
-    }
-    lightLightbox.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeLightLightbox() {
-    if (!lightLightbox) return;
-    lightLightbox.hidden = true;
-    document.body.style.overflow = "";
-  }
-
-  document.querySelectorAll(".real-light-card").forEach((card) => {
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "button");
-    const nameEl = card.querySelector(".real-light-name");
-    if (nameEl) card.setAttribute("aria-label", `View ${nameEl.textContent}'s light`);
-
-    card.addEventListener("click", () => openLightLightbox(card));
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openLightLightbox(card);
-      }
-    });
-  });
-
-  if (lightLightboxClose) lightLightboxClose.addEventListener("click", closeLightLightbox);
-  if (lightLightbox) {
-    lightLightbox.addEventListener("click", (e) => {
-      if (e.target === lightLightbox) closeLightLightbox();
-    });
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightLightbox();
-  });
 });
