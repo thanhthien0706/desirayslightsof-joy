@@ -370,7 +370,7 @@ button {
 }
 
 .brand-logo img {
-  height: 100px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   transition: transform var(--trans-fast);
@@ -1758,7 +1758,7 @@ button {
 }
 
 .footer-logo-img {
-  height: 52px;
+  height: 60px;
   width: auto;
   margin-bottom: 16px;
 }
@@ -2530,7 +2530,7 @@ svg.icon-inline {
 .lights-divider svg {
   width: 100%;
   max-width: 760px;
-  height: 46px;
+  height: 80px;
   display: block;
 }
 
