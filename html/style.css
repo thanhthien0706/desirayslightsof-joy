@@ -2627,23 +2627,15 @@ button {
   gap: 18px;
 }
 
-.stack-img-1 {
+.tribute-single-img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
-  border: var(--border-w) solid var(--border-subtle);
-  box-shadow: var(--shadow-card);
-}
-
-.stack-img-2 {
-  width: 100%;
-  height: 220px;
+  height: 420px;
   object-fit: contain;
   background: var(--bg-surface);
   border-radius: var(--radius-sm);
   border: var(--border-w) solid var(--border-subtle);
-  padding: 16px;
+  box-shadow: var(--shadow-card);
+  padding: 24px;
 }
 
 .about-cta-section {
