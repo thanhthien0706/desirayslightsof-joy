@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/light", "destination": "/what_we_do", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/light/:slug", "destination": "/child" }
+  ]
+}

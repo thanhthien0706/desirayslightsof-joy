@@ -9,15 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getRequestedSlug() {
     const params = new URLSearchParams(window.location.search);
-    const fromQuery = params.get("c") || params.get("child") || params.get("name");
+    const fromQuery = params.get("c") || params.get("child") || params.get("name") || params.get("slug");
     if (fromQuery) return fromQuery.toLowerCase();
 
     const path = window.location.pathname.replace(/\/+$/, "");
     const parts = path.split("/").filter(Boolean);
-    if (parts.length && parts[parts.length - 2] === "light") {
+    if (parts.length >= 2 && (parts[parts.length - 2] === "light" || parts[parts.length - 2] === "child")) {
       return decodeURIComponent(parts[parts.length - 1]).toLowerCase();
     }
-    if (parts.length && parts[0] === "light") {
+    if (parts.length && (parts[0] === "light" || parts[0] === "child")) {
       return decodeURIComponent(parts[1] || "").toLowerCase();
     }
     return "";
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const slug = getRequestedSlug();
-  const index = children.findIndex((c) => c.slug === slug);
+  const index = children.findIndex((c) => (c.slug || "").toLowerCase() === slug);
 
   const notFoundSection = document.getElementById("childNotFound");
   const contentSection = document.getElementById("childContent");
