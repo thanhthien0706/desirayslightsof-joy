@@ -18,13 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
   ].filter(Boolean);
 
   const savedTheme = localStorage.getItem("dloj_theme") || "light";
-  document.body.setAttribute("data-theme", savedTheme);
+
+  function applyTheme(theme) {
+    document.body.setAttribute("data-theme", theme);
+    const isDark = theme === "dark";
+    nightModeToggles.forEach(btn => {
+      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    });
+  }
+
+  applyTheme(savedTheme);
 
   nightModeToggles.forEach(btn => {
     btn.addEventListener("click", () => {
       const isDark = document.body.getAttribute("data-theme") === "dark";
       const nextTheme = isDark ? "light" : "dark";
-      document.body.setAttribute("data-theme", nextTheme);
+      applyTheme(nextTheme);
       localStorage.setItem("dloj_theme", nextTheme);
     });
   });

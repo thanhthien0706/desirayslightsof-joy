@@ -9,22 +9,6 @@
 </head>
 <body data-theme="light">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <aside class="announcement-bar">
-    <div class="container announcement-inner">
-      <span class="announcement-tag">Official 501(c)(3) Public Charity</span>
-      <span class="announcement-text">
-        58+ Personalized Bedside Lights Donated to Young Warriors at Rady Children&rsquo;s Hospital.
-        <a href="/donate" class="announcement-link">Sponsor a Light Today &rarr;</a>
-      </span>
-      <div class="theme-toggle-wrap">
-        <button id="nightModeToggleChild" class="theme-toggle-btn" aria-label="Toggle Lights Off Mode" title="Switch between soft pink and lights-off dark mode">
-          <span>Lights Off</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
   <!-- NAVIGATION HEADER -->
   <header class="site-header" id="header">
     <div class="container nav-container">
@@ -41,6 +25,14 @@
       </nav>
 
       <div class="header-actions">
+        <button id="nightModeToggleChild" class="theme-switch" aria-label="Toggle Lights Off Mode" aria-pressed="false" title="Switch between soft pink and lights-off dark mode">
+          <span class="theme-switch-track" aria-hidden="true">
+            <span class="theme-switch-thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+            </span>
+          </span>
+        </button>
         <a href="/donate" class="btn btn-donate btn-neon-glow" id="headerDonateBtn">
           <span>💖 Donate</span>
         </a>

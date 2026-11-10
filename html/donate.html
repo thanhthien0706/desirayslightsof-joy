@@ -9,21 +9,6 @@
 </head>
 <body data-theme="light">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <aside class="announcement-bar">
-    <div class="container announcement-inner">
-      <span class="announcement-tag">Official 501(c)(3) Public Charity</span>
-      <span class="announcement-text">
-        100% of your donation directly funds signs, rechargeable batteries &amp; hospital joy.
-      </span>
-      <div class="theme-toggle-wrap">
-        <button id="nightModeToggleDonate" class="theme-toggle-btn" aria-label="Toggle Lights Off Mode" title="Switch between soft pink and lights-off dark mode">
-          <span>Lights Off</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
   <!-- NAVIGATION HEADER -->
   <header class="site-header" id="header">
     <div class="container nav-container">
@@ -40,6 +25,14 @@
       </nav>
 
       <div class="header-actions">
+        <button id="nightModeToggleDonate" class="theme-switch" aria-label="Toggle Lights Off Mode" aria-pressed="false" title="Switch between soft pink and lights-off dark mode">
+          <span class="theme-switch-track" aria-hidden="true">
+            <span class="theme-switch-thumb">
+              <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+            </span>
+          </span>
+        </button>
         <a href="#donate-options" class="btn btn-donate btn-neon-glow" id="headerDonateBtn">
           <span>💖 Donate</span>
         </a>
@@ -207,42 +200,42 @@
           <h2 class="section-heading">Questions from <em>Our Supporters</em></h2>
         </div>
 
-        <div class="donate-faq-grid" style="display: grid; gap: 24px; max-width: 960px; margin: 36px auto 0;">
-          <div style="background: var(--bg-surface); border: 3px solid var(--border-subtle); border-radius: 9px; padding: 24px;">
-            <h5 style="font-size: 1.1rem; font-weight: 700; color: var(--text-headline); margin-bottom: 8px;">
-              Can I co-sponsor a light with my friends or coworkers?
-            </h5>
-            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin: 0;">
-              Yes! As we say: <em>&ldquo;Just you &mdash; or you and what army??? 💪&rdquo;</em> You can pool funds together to sponsor a $265 sign or $361 complete care set through either PayPal button above.
-            </p>
-          </div>
+        <div class="faq-accordion" style="max-width: 760px; margin: 36px auto 0;">
+          <details class="faq-item">
+            <summary class="faq-question">Can I co-sponsor a light with my friends or coworkers?</summary>
+            <div class="faq-answer">
+              <p>
+                Yes! As we say: <em>&ldquo;Just you &mdash; or you and what army??? 💪&rdquo;</em> You can pool funds together to sponsor a $265 sign or $361 complete care set through either PayPal button above.
+              </p>
+            </div>
+          </details>
 
-          <div style="background: var(--bg-surface); border: 3px solid var(--border-subtle); border-radius: 9px; padding: 24px;">
-            <h5 style="font-size: 1.1rem; font-weight: 700; color: var(--text-headline); margin-bottom: 8px;">
-              Why is a rechargeable battery included in the $361 set?
-            </h5>
-            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin: 0;">
-              Pediatric transplant patients often have to walk the corridors with IV poles. The rechargeable battery pack allows their sign to be portable, illuminating their path wherever they go in the ward.
-            </p>
-          </div>
+          <details class="faq-item">
+            <summary class="faq-question">Why is a rechargeable battery included in the $361 set?</summary>
+            <div class="faq-answer">
+              <p>
+                Pediatric transplant patients often have to walk the corridors with IV poles. The rechargeable battery pack allows their sign to be portable, illuminating their path wherever they go in the ward.
+              </p>
+            </div>
+          </details>
 
-          <div style="background: var(--bg-surface); border: 3px solid var(--border-subtle); border-radius: 9px; padding: 24px;">
-            <h5 style="font-size: 1.1rem; font-weight: 700; color: var(--text-headline); margin-bottom: 8px;">
-              Does the child get to keep the sign when leaving?
-            </h5>
-            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin: 0;">
-              Yes! Once treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang permanently on their bedroom wall as a badge of honor.
-            </p>
-          </div>
+          <details class="faq-item">
+            <summary class="faq-question">Does the child get to keep the sign when leaving?</summary>
+            <div class="faq-answer">
+              <p>
+                Yes! Once treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang permanently on their bedroom wall as a badge of honor.
+              </p>
+            </div>
+          </details>
 
-          <div style="background: var(--bg-surface); border: 3px solid var(--border-subtle); border-radius: 9px; padding: 24px;">
-            <h5 style="font-size: 1.1rem; font-weight: 700; color: var(--text-headline); margin-bottom: 8px;">
-              How can I donate through Zelle?
-            </h5>
-            <p style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6; margin: 0;">
-              Simply scan the QR code above with your banking app, or send through Zelle directly to <strong>marlene@desirayslightsofjoy.org</strong>.
-            </p>
-          </div>
+          <details class="faq-item">
+            <summary class="faq-question">How can I donate through Zelle?</summary>
+            <div class="faq-answer">
+              <p>
+                Simply scan the QR code above with your banking app, or send through Zelle directly to <strong>marlene@desirayslightsofjoy.org</strong>.
+              </p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
