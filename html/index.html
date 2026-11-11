@@ -33,8 +33,7 @@
             </span>
           </span>
         </button>
-        <a href="/donate" class="btn btn-donate btn-neon-glow" id="headerDonateBtn">
-          <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
+        <a href="/donate" class="btn btn-header-donate" id="headerDonateBtn">
           <span>Donate</span>
         </a>
         <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -88,21 +87,46 @@
         <div class="hero-visual-frame">
           <div class="hero-photo-card tilt-left">
             <div class="hero-photo-wrapper">
+              <!-- To swap the photo, just change this src -->
               <img src="assets/images/desiray-hospital-bedside.png" alt="Desiray at Rady Children's Hospital with her personalized neon sign and heart light" class="hero-real-img">
               <span class="hero-photo-badge">The Original Keepsake</span>
+
+              <!-- Perimeter fairy lights: decorative, closed loop wrapping the photo's torn-edge frame -->
+              <ul class="hero-fairy-lights" aria-hidden="true">
+                <li class="bulb group-1" style="top:-6px; left:6%;"></li>
+                <li class="bulb group-2" style="top:-11px; left:20%;"></li>
+                <li class="bulb group-3" style="top:-6px; left:34%;"></li>
+                <li class="bulb group-4" style="top:-11px; left:50%;"></li>
+                <li class="bulb group-1" style="top:-6px; left:66%;"></li>
+                <li class="bulb group-2" style="top:-11px; left:80%;"></li>
+                <li class="bulb group-3" style="top:-6px; left:94%;"></li>
+
+                <li class="bulb group-4" style="top:14%; right:-6px;"></li>
+                <li class="bulb group-1" style="top:30%; right:-11px;"></li>
+                <li class="bulb group-2" style="top:46%; right:-6px;"></li>
+                <li class="bulb group-3" style="top:62%; right:-11px;"></li>
+                <li class="bulb group-4" style="top:78%; right:-6px;"></li>
+                <li class="bulb group-1" style="top:94%; right:-11px;"></li>
+
+                <li class="bulb group-2" style="bottom:-6px; left:94%;"></li>
+                <li class="bulb group-3" style="bottom:-11px; left:80%;"></li>
+                <li class="bulb group-4" style="bottom:-6px; left:66%;"></li>
+                <li class="bulb group-1" style="bottom:-11px; left:50%;"></li>
+                <li class="bulb group-2" style="bottom:-6px; left:34%;"></li>
+                <li class="bulb group-3" style="bottom:-11px; left:20%;"></li>
+                <li class="bulb group-4" style="bottom:-6px; left:6%;"></li>
+
+                <li class="bulb group-1" style="top:94%; left:-6px;"></li>
+                <li class="bulb group-2" style="top:78%; left:-11px;"></li>
+                <li class="bulb group-3" style="top:62%; left:-6px;"></li>
+                <li class="bulb group-4" style="top:46%; left:-11px;"></li>
+                <li class="bulb group-1" style="top:30%; left:-6px;"></li>
+                <li class="bulb group-2" style="top:14%; left:-11px;"></li>
+              </ul>
             </div>
             <div class="hero-photo-caption">
               <strong>Desiray&rsquo;s Own Bedside Light</strong>
               Gifted by her godmother Ms. Robin, this sign brought so much comfort during treatment that our family promised to illuminate the room of every young warrior at Rady.
-            </div>
-
-            <!-- Soft illustrated mascot sticker -->
-            <div class="hero-mascot-sticker tilt-right">
-              <img src="assets/images/buffalo-girl-plush.png" alt="The Pink Buffalo Girl" class="sticker-thumb">
-              <div class="sticker-text">
-                <strong>Pink Buffalo Girl</strong>
-                <span>Desiray&rsquo;s brave spirit</span>
-              </div>
             </div>
           </div>
         </div>
