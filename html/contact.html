@@ -8,8 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
 </head>
-<body data-theme="light">
+<body class="page-contact" data-theme="light">
+
+  <a class="skip-link" href="#contactMain">Skip to content</a>
 
   <!-- NAVIGATION HEADER -->
   <header class="site-header" id="header">
@@ -49,92 +52,77 @@
   </header>
 
   <main id="contactMain">
-    <!-- CONTACT HERO BANNER -->
-    <section class="donate-hero-banner" style="padding: 64px 0 48px;">
+    <section class="ct-hero">
       <div class="container">
-        <span class="eyebrow">Connect With Our Board</span>
-        <h1 class="donate-hero-title">
-          We&rsquo;d Love to <em>Hear From You</em>
-        </h1>
-        <p class="donate-hero-sub">
-          Whether you have questions about sponsoring a patient, nominating a young warrior at Rady Children&rsquo;s, or exploring expansion to other pediatric hospitals &mdash; Marlene and our family are always here to connect.
-        </p>
+        <h1>We&rsquo;d love to <em>hear from you</em></h1>
+        <p class="ct-lead">Whether you have questions about sponsoring a patient, nominating a young warrior at Rady Children&rsquo;s, or exploring expansion to other pediatric hospitals &mdash; Marlene and our family are always here to connect.</p>
       </div>
     </section>
 
-    <!-- CONTACT CHANNELS & FORM -->
-    <section class="story-section" style="padding: 60px 0 80px;">
-      <div class="container">
-        <div style="max-width: 760px; margin: 0 auto;">
-          <div style="background: var(--bg-surface); border: 3px solid var(--border-subtle); border-radius: 9px; padding: 36px; box-shadow: var(--shadow-card); margin-bottom: 32px;">
-            <span class="eyebrow">Direct Contact Channels</span>
-            <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-headline); margin-bottom: 20px;">
-              Get in Touch with Marlene &amp; Our Board
-            </h3>
-
-            <div style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 28px;">
-              <!-- Email Channel -->
-              <div style="background: var(--bg-page); border: 3px solid var(--border-subtle); border-left: 5px solid var(--rose-primary); border-radius: 6px; padding: 16px;">
-                <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--rose-text);">Have Questions? Email Us</span>
-                <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-headline); margin: 4px 0 2px;">
-                  <a href="mailto:marlene@desirayslightsofjoy.org">marlene@desirayslightsofjoy.org</a>
-                </p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Direct inbox of founder Marlene Davis. We reply promptly.</span>
+    <section class="ct-section">
+      <div class="container ct-grid">
+        <div class="ct-form-wrap">
+          <h2>Send us a message</h2>
+          <form id="contactForm" class="ct-form">
+            <div class="ct-row">
+              <div class="ct-field">
+                <label for="cName">Your name <span aria-hidden="true">*</span></label>
+                <input type="text" id="cName" name="name" autocomplete="name" placeholder="First and last name" required>
               </div>
-
-              <!-- Facebook Fanpage Channel -->
-              <div style="background: var(--bg-page); border: 3px solid var(--border-subtle); border-left: 5px solid #1877f2; border-radius: 6px; padding: 16px;">
-                <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: #1877f2;">Follow Our Journey</span>
-                <p style="font-size: 1.15rem; font-weight: 700; color: var(--text-headline); margin: 4px 0 2px;">
-                  <a href="https://www.facebook.com/profile.php?id=61559929360920&amp;mibextid=wwXIfr&amp;rdid=17mmhWpjOXWsxJqe&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AyaocEmXW%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener">Facebook: Desiray&rsquo;s Lights Of Joy</a>
-                </p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Follow our official fanpage for updates on light deliveries and patient stories.</span>
-              </div>
-
-              <!-- Hospital Partner -->
-              <div style="background: var(--bg-page); border: 3px solid var(--border-subtle); border-radius: 6px; padding: 16px;">
-                <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--text-muted);">Hospital Partner Location</span>
-                <p style="font-size: 1rem; font-weight: 700; color: var(--text-headline); margin: 4px 0 2px;">
-                  Rady Children&rsquo;s Hospital &bull; San Diego, CA
-                </p>
-                <span style="font-size: 0.85rem; color: var(--text-muted);">Pediatric Bone Marrow &amp; Stem Cell Transplant Inpatient Unit (4th Floor)</span>
+              <div class="ct-field">
+                <label for="cEmail">Your email <span aria-hidden="true">*</span></label>
+                <input type="email" id="cEmail" name="email" autocomplete="email" placeholder="you@domain.com" required>
               </div>
             </div>
-
-            <!-- Interactive Message Form -->
-            <form id="contactForm">
-              <div class="form-inputs-row">
-                <div class="half-col">
-                  <label for="cName" class="input-label">Your Name *</label>
-                  <input type="text" id="cName" class="field-control" placeholder="First and Last Name" required>
-                </div>
-                <div class="half-col">
-                  <label for="cEmail" class="input-label">Your Email *</label>
-                  <input type="email" id="cEmail" class="field-control" placeholder="you@domain.com" required>
-                </div>
-              </div>
-              <div class="field-group">
-                <label for="cSubject" class="input-label">Subject</label>
-                <select id="cSubject" class="field-control" style="background: var(--bg-surface);">
-                  <option value="sponsor">Sponsoring a Patient Light</option>
-                  <option value="nominate">Nominate a Patient at Rady Children&rsquo;s</option>
-                  <option value="expansion">Hospital Expansion</option>
-                  <option value="general">General Question for Marlene</option>
-                </select>
-              </div>
-              <div class="field-group">
-                <label for="cMessage" class="input-label">Your Message *</label>
-                <textarea id="cMessage" class="field-control" rows="4" placeholder="How can we help or collaborate?" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-large btn-neon-glow" style="width: 100%;">
-                Send Message &rarr;
-              </button>
-            </form>
-          </div>
+            <div class="ct-field">
+              <label for="cSubject">Subject</label>
+              <select id="cSubject" name="subject">
+                <option value="Sponsoring a Patient Light">Sponsoring a Patient Light</option>
+                <option value="Nominate a Patient at Rady Children's">Nominate a Patient at Rady Children&rsquo;s</option>
+                <option value="Hospital Expansion">Hospital Expansion</option>
+                <option value="General Question for Marlene">General Question for Marlene</option>
+              </select>
+            </div>
+            <div class="ct-field">
+              <label for="cMessage">Your message <span aria-hidden="true">*</span></label>
+              <textarea id="cMessage" name="message" rows="6" placeholder="How can we help or collaborate?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">Send message</button>
+            <p class="ct-status" id="contactStatus" role="status" aria-live="polite"></p>
+          </form>
         </div>
+
+        <aside class="ct-channels" aria-labelledby="ct-channels-title">
+          <h2 id="ct-channels-title">Get in touch directly</h2>
+          <ul class="ct-list">
+            <li>
+              <svg class="ct-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:marlene@desirayslightsofjoy.org">marlene@desirayslightsofjoy.org</a></p>
+                <p class="ct-note">Direct inbox of founder Marlene Davis. We reply promptly.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="ct-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9h3V5.5h-3A4 4 0 0 0 10 9.5V12H7v3.5h3V21h3.5v-5.5H17L17.5 12h-4V9.8A.8.8 0 0 1 14 9Z"/></svg>
+              <div>
+                <h3>Facebook</h3>
+                <p><a href="https://www.facebook.com/profile.php?id=61559929360920&amp;mibextid=wwXIfr&amp;rdid=17mmhWpjOXWsxJqe&amp;share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AyaocEmXW%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener">Desiray&rsquo;s Lights Of Joy<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+                <p class="ct-note">Follow our official page for updates on light deliveries and patient stories.</p>
+              </div>
+            </li>
+            <li>
+              <svg class="ct-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <div>
+                <h3>Hospital partner</h3>
+                <p>Rady Children&rsquo;s Hospital &bull; San Diego, CA</p>
+                <p class="ct-note">Pediatric Bone Marrow &amp; Stem Cell Transplant Inpatient Unit (4th Floor)</p>
+              </div>
+            </li>
+          </ul>
+        </aside>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->

@@ -133,21 +133,57 @@
   color: var(--text-muted);
 }
 
+/* Justified rows: every row has the same height, but rows alternate between 2 and 3 tiles,
+   so the photos change width as you scroll (wide, then medium) and it is not a grid of equal
+   squares. Neon names are long, so tiles never get narrower than about 16:10, which keeps
+   every name readable. 5-tile cycle: 47 lights are nine cycles plus one row of two, so the
+   gallery ends flush. */
 .light-grid {
+  --row: clamp(170px, 18vw, 220px);
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.6vw, 20px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: var(--row);
+  gap: clamp(10px, 1.4vw, 18px);
+}
+
+.light-grid a {
+  grid-column: span 4; /* 3 across */
+}
+
+.light-grid a:nth-child(5n + 1),
+.light-grid a:nth-child(5n + 2) {
+  grid-column: span 6; /* 2 across: the wide, cinematic row */
 }
 
 .light-grid img {
-  aspect-ratio: 16 / 10;
+  position: absolute;
+  inset: 0;
+  height: 100%;
 }
 
-/* Photo failed to load: keep the card, name only, same 16:10 shape */
-.light-grid a.is-missing {
-  aspect-ratio: 16 / 10;
+.light-grid a:nth-child(5n + 1) span,
+.light-grid a:nth-child(5n + 2) span {
+  padding: 64px 24px 18px;
+  font-size: 2.1rem;
 }
 
+/* The brand metaphor: the lights are off until you point at one, then it switches on.
+   Only where hover exists; touch screens always show the photos at full brightness. */
+@media (hover: hover) and (pointer: fine) {
+  .light-grid img {
+    filter: brightness(0.78) saturate(0.85);
+    transition:
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .light-grid a:hover img,
+  .light-grid a:focus-visible img {
+    filter: brightness(1.08) saturate(1.2);
+  }
+}
+
+/* Photo failed to load: keep the tile, name only */
 .light-grid a.is-missing span {
   inset: 0;
   display: grid;
@@ -202,6 +238,8 @@
     transition: none;
   }
 
+  /* the light still switches on with hover/focus, it just does not fade or zoom */
+
   .feature-photo:hover img,
   .feature-photo:focus-visible img,
   .light-grid a:hover img,
@@ -211,18 +249,35 @@
 }
 
 /* ---------- Responsive ---------- */
+/* Tablet: same rhythm, shorter rows */
 @media (max-width: 1000px) {
   .light-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    --row: clamp(150px, 24vw, 230px);
+  }
+
+  .light-grid a:nth-child(5n + 1) span,
+  .light-grid a:nth-child(5n + 2) span {
+    padding: 36px 14px 12px;
+    font-size: 1.7rem;
   }
 }
 
+/* Phone: two across, the odd last tile runs the full width */
 @media (max-width: 720px) {
   .light-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --row: clamp(120px, 34vw, 190px);
   }
 
-  .light-grid span {
+  .light-grid a:nth-child(n) {
+    grid-column: span 6;
+  }
+
+  .light-grid a:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .light-grid span,
+  .light-grid a:nth-child(n) span {
     font-size: 1.4rem;
     padding: 36px 12px 10px;
   }

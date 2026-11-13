@@ -196,11 +196,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
+    // There is no backend: the message opens in the visitor's own email app, addressed to the board.
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("cName")?.value.trim();
-      alert(`Thank you, ${name || "friend"}! Marlene and the DLOJ board have received your message and will be in touch shortly.`);
-      contactForm.reset();
+      const val = (id) => document.getElementById(id)?.value.trim() || "";
+      const body = `${val("cMessage")}\n\n\u2014 ${val("cName")} (${val("cEmail")})`;
+      const href = `mailto:marlene@desirayslightsofjoy.org?subject=${encodeURIComponent(val("cSubject"))}&body=${encodeURIComponent(body)}`;
+      const status = document.getElementById("contactStatus");
+      if (status) {
+        status.textContent = "Opening your email app\u2026 If nothing opens, write to marlene@desirayslightsofjoy.org.";
+      }
+      window.location.href = href;
     });
   }
 

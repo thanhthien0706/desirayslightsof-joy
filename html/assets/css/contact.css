@@ -1,0 +1,245 @@
+/* ==========================================================================
+   CONTACT: simple layout (loaded after style.css, contact.html only)
+   Same quiet language as the other pages: flat surfaces, hairlines, whitespace.
+   ========================================================================== */
+
+.page-contact .container {
+  max-width: 1120px;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+.page-contact main h1,
+.page-contact main h2,
+.page-contact main h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  text-wrap: balance;
+  font-synthesis: none; /* Calistoga has a single weight and no italic */
+}
+
+.page-contact main h1 em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-primary);
+}
+
+.page-contact main .btn {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.page-contact main .btn:hover {
+  transform: none;
+}
+
+/* ---------- Hero ---------- */
+.ct-hero {
+  padding: clamp(48px, 7vw, 96px) 0 clamp(32px, 5vw, 56px);
+  background: var(--bg-page);
+}
+
+.page-contact .ct-hero h1 {
+  max-width: 20ch;
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+}
+
+.ct-lead {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ---------- Form + channels ---------- */
+.ct-section {
+  padding-block: clamp(48px, 7vw, 88px);
+  background: var(--bg-surface);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(40px, 7vw, 96px);
+  align-items: start;
+}
+
+.page-contact main h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.ct-form {
+  display: grid;
+  gap: 20px;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.ct-field {
+  display: grid;
+  gap: 8px;
+}
+
+.ct-field label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-headline);
+}
+
+.ct-field input,
+.ct-field select,
+.ct-field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  font: inherit;
+  color: var(--text-headline);
+  background: var(--bg-page);
+  border: 1px solid var(--border-strong, var(--border-subtle));
+  border-radius: var(--radius-sm);
+}
+
+.ct-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.ct-field input::placeholder,
+.ct-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.ct-field input:focus-visible,
+.ct-field select:focus-visible,
+.ct-field textarea:focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 1px;
+  border-color: var(--rose-primary);
+}
+
+.ct-form .btn {
+  justify-self: start;
+}
+
+.ct-status {
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--rose-text);
+}
+
+/* ---------- Channels ---------- */
+.ct-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ct-list li {
+  display: flex;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ct-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  fill: none;
+  stroke: var(--rose-text);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.page-contact main h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.ct-list p {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--text-headline);
+  overflow-wrap: anywhere;
+}
+
+.ct-list a {
+  font-weight: 700;
+  color: var(--rose-text);
+  text-underline-offset: 3px;
+}
+
+.page-contact main .ct-note {
+  margin-top: 4px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- Browser surfaces ---------- */
+.page-contact :where(a, button):focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+.page-contact ::selection {
+  background: var(--rose-tint);
+  color: var(--text-headline);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--text-headline);
+  color: var(--bg-page);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .ct-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-form .btn {
+    justify-self: stretch;
+  }
+}
