@@ -1,0 +1,273 @@
+/* ==========================================================================
+   LIGHT PAGE (/light/<name>): simple layout (loaded after style.css, child.html only)
+   Same quiet language as the home, What We Do and About pages: flat surfaces,
+   hairlines, generous whitespace. The photo and the name carry the page.
+   ========================================================================== */
+
+.page-child .container {
+  max-width: 1120px;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+.page-child main h1,
+.page-child main h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  text-wrap: balance;
+  font-synthesis: none; /* Calistoga has a single weight and no italic */
+}
+
+.page-child main h1 em,
+.page-child main h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-primary);
+}
+
+/* ---------- Not found ---------- */
+.cd-notfound {
+  padding: clamp(64px, 10vw, 128px) 0;
+  background: var(--bg-page);
+}
+
+.cd-notfound .container {
+  max-width: 680px;
+  text-align: center;
+}
+
+.cd-notfound h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 16px;
+}
+
+.cd-notfound p {
+  margin: 0 0 32px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ---------- Breadcrumb ---------- */
+.cd-crumb {
+  padding-top: clamp(24px, 3vw, 36px);
+}
+
+.cd-crumb .text-link-arrow,
+.cd-pager .text-link-arrow {
+  margin-top: 0;
+}
+
+/* ---------- Hero ---------- */
+.cd-hero {
+  padding: clamp(24px, 4vw, 48px) 0 clamp(48px, 7vw, 88px);
+  background: var(--bg-page);
+}
+
+.cd-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.cd-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin: 0 0 20px;
+  overflow-wrap: anywhere;
+}
+
+.cd-note {
+  max-width: 54ch;
+  margin: 0 0 32px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.cd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+
+/* Flat buttons, same as the other pages (style.css gives them a hard offset shadow) */
+.page-child main .btn {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.page-child main .btn:hover {
+  transform: none;
+}
+
+.cd-photo {
+  margin: 0;
+}
+
+.cd-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  background: #140d16;
+}
+
+.cd-photo figcaption {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.cd-photo figcaption strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text-headline);
+}
+
+.cd-badge {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--rose-text);
+}
+
+/* ---------- Previous / next ---------- */
+.cd-pager {
+  border-block: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.cd-pager-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-block: 20px;
+}
+
+/* ---------- More lights ---------- */
+.cd-more {
+  padding: clamp(56px, 8vw, 96px) 0 clamp(64px, 9vw, 112px);
+  background: var(--bg-page);
+}
+
+.cd-more h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin: 0 0 clamp(24px, 3vw, 36px);
+}
+
+.cd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.cd-grid a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #140d16;
+  color: #fff3f8;
+}
+
+.cd-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Names sit inside the photo on a dark fade, in the site's handwriting face */
+.cd-grid span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 18px 14px;
+  font-family: var(--font-handwriting);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  background: linear-gradient(to top, rgba(20, 13, 22, 0.85), rgba(20, 13, 22, 0));
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.cd-grid a:hover img,
+.cd-grid a:focus-visible img {
+  transform: scale(1.04);
+}
+
+.cd-noscript {
+  padding-block: 64px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ---------- Browser surfaces ---------- */
+.page-child :where(a, button):focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+.page-child ::selection {
+  background: var(--rose-tint);
+  color: var(--text-headline);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--text-headline);
+  color: var(--bg-page);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* No hover zoom for visitors who asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .cd-grid img {
+    transition: none;
+  }
+
+  .cd-grid a:hover img,
+  .cd-grid a:focus-visible img {
+    transform: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .cd-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .cd-grid span {
+    font-size: 1.35rem;
+    padding: 36px 12px 10px;
+  }
+
+  .cd-actions .btn {
+    width: 100%;
+  }
+}

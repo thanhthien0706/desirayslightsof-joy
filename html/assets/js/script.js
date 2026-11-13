@@ -161,10 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (amountNote) {
         amountNote.textContent = `You selected $${tile.getAttribute("data-amount")} — send that amount below. Thank you!`;
       }
-      // Tiles that are real <button>s (home page) don't jump to the QR code
-      // like the <a href="#..."> tiles do, so bring it into view the same way.
+      // Tiles that are real <button>s don't jump to the QR code like <a href="#..."> tiles do,
+      // so bring it into view the same way. data-scroll names the target id (home page default: homeZelleQr).
       if (tile.tagName === "BUTTON") {
-        const qr = document.getElementById("homeZelleQr");
+        const qr = document.getElementById(tile.dataset.scroll || "homeZelleQr");
         const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (qr) qr.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" });
       }

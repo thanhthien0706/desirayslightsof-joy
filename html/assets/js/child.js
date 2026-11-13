@@ -29,11 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 
+  // Small 480px copy for the "more lights" cards (Desiray's photo has no thumbnail: use the full one).
+  function thumbOf(child) {
+    if (child.founder) return child.img;
+    return child.img.replace("/what-we-do/", "/what-we-do/thumbs/").replace(/\.\w+$/, ".webp");
+  }
+
+  // alt="" because the name inside the same link already names it.
   function cardMarkup(child) {
     return `
-      <a class="real-light-card" href="/light/${encodeURIComponent(child.slug)}">
-        <img src="${child.img}" alt="${escapeHTML(child.alt)}" loading="lazy">
-        <div class="real-light-name">${escapeHTML(child.name)}</div>
+      <a href="/light/${encodeURIComponent(child.slug)}">
+        <img src="${thumbOf(child)}" alt="" loading="lazy" decoding="async">
+        <span>${escapeHTML(child.name)}</span>
       </a>
     `;
   }
@@ -105,6 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (candidate.slug !== child.slug) more.push(candidate);
     }
     moreGrid.innerHTML = more.map(cardMarkup).join("");
+    // If a thumbnail fails to load, fall back once to the full photo instead of a broken image.
+    moreGrid.querySelectorAll("img").forEach((img, i) => {
+      img.addEventListener("error", () => {
+        if (img.getAttribute("src") !== more[i].img) img.src = more[i].img;
+      });
+    });
   }
 
   if (contentSection) contentSection.hidden = false;

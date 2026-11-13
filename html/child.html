@@ -9,8 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/child.css">
 </head>
-<body data-theme="light">
+<body class="page-child" data-theme="light">
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAVIGATION HEADER -->
   <header class="site-header" id="header">
@@ -48,13 +51,12 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- CHILD NOT FOUND STATE -->
-    <section id="childNotFound" class="story-section" hidden>
-      <div class="container" style="max-width: 640px; text-align: center;">
-        <span class="eyebrow">Hmm, We Couldn&rsquo;t Find That Light</span>
-        <h1 class="section-heading">This Page Wandered <em>Off Somewhere</em></h1>
-        <p class="section-lead">
+    <section id="childNotFound" class="cd-notfound" hidden>
+      <div class="container">
+        <h1>This Page Wandered <em>Off Somewhere</em></h1>
+        <p>
           We couldn&rsquo;t find a light with that name. It may have been moved, or the link might be mistyped &mdash; but there are 58 other glowing stories waiting for you.
         </p>
         <a href="/what_we_do" class="btn btn-primary btn-large">&larr; Back to the Full Gallery</a>
@@ -64,23 +66,20 @@
     <!-- CHILD CONTENT -->
     <div id="childContent" hidden>
       <!-- BREADCRUMB -->
-      <section style="padding: 28px 0 0;">
-        <div class="container">
-          <a href="/what_we_do" class="text-link-arrow" style="margin-top: 0;">&larr; Back to the Full Gallery</a>
-        </div>
-      </section>
+      <div class="container cd-crumb">
+        <a href="/what_we_do" class="text-link-arrow">&larr; Back to the Full Gallery</a>
+      </div>
 
       <!-- HERO: PHOTO + NAME -->
-      <section style="padding: 24px 0 48px;">
+      <section class="cd-hero">
         <div class="container">
-          <div class="about-hero-grid" style="align-items: start;">
-            <div>
-              <span class="eyebrow">Personalized 30&Prime; Neon Light</span>
-              <h1 class="section-heading text-left" id="childName" style="margin-bottom: 18px;">&nbsp;</h1>
-              <p class="about-hero-lead" id="childNote"></p>
+          <div class="cd-hero-grid">
+            <div class="cd-hero-copy">
+              <h1 id="childName">&nbsp;</h1>
+              <p class="cd-note" id="childNote"></p>
 
-              <div class="hero-actions" style="margin-top: 8px;">
-                <a href="/donate" class="btn btn-primary btn-large btn-donate" id="childDonateLink">
+              <div class="cd-actions">
+                <a href="/donate" class="btn btn-primary btn-large" id="childDonateLink">
                   <span>Sponsor a Light Like This One</span>
                   <span>&rarr;</span>
                 </a>
@@ -90,39 +89,40 @@
               </div>
             </div>
 
-            <div class="real-portrait-card">
-              <div class="portrait-image-frame">
-                <img id="childPhoto" class="child-light-photo" src="" alt="">
-                <span class="portrait-badge">Rady Children&rsquo;s Hospital &bull; San Diego</span>
-              </div>
-              <div class="portrait-caption">
+            <figure class="cd-photo">
+              <img id="childPhoto" alt="" fetchpriority="high" decoding="async">
+              <figcaption>
+                <span class="cd-badge">Rady Children&rsquo;s Hospital &bull; San Diego</span>
                 <strong>A Bedside Keepsake</strong>
                 Hand-crafted and delivered to bring light into a hospital room &mdash; and home again as a lifelong reminder of courage.
-              </div>
-            </div>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <!-- PREV / NEXT -->
-      <section style="padding: 0 0 56px; border-top: 3px solid var(--border-subtle); border-bottom: 3px solid var(--border-subtle);">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 20px 0;">
-          <a href="#" id="childPrevLink" class="text-link-arrow" style="margin-top: 0;">&larr; <span id="childPrevName">Previous Light</span></a>
-          <a href="#" id="childNextLink" class="text-link-arrow" style="margin-top: 0;"><span id="childNextName">Next Light</span> &rarr;</a>
+      <nav class="cd-pager" aria-label="More lights">
+        <div class="container cd-pager-row">
+          <a href="#" id="childPrevLink" class="text-link-arrow">&larr; <span id="childPrevName">Previous Light</span></a>
+          <a href="#" id="childNextLink" class="text-link-arrow"><span id="childNextName">Next Light</span> &rarr;</a>
         </div>
-      </section>
+      </nav>
 
       <!-- EXPLORE MORE -->
-      <section class="gallery-section" style="padding: 56px 0 96px;">
+      <section class="cd-more">
         <div class="container">
-          <div style="text-align: center; margin-bottom: 32px;">
-            <span class="eyebrow">Keep Exploring</span>
-            <h2 class="section-heading">More Young Warriors&rsquo; <em>Lights</em></h2>
-          </div>
-          <div class="lights-card-grid" id="childMoreGrid"></div>
+          <h2>More Young Warriors&rsquo; <em>Lights</em></h2>
+          <div class="cd-grid" id="childMoreGrid"></div>
         </div>
       </section>
     </div>
+
+    <noscript>
+      <div class="container cd-noscript">
+        <p>This page needs JavaScript to show a young warrior&rsquo;s story. <a href="/what_we_do" class="text-link-arrow">Browse the full gallery &rarr;</a></p>
+      </div>
+    </noscript>
   </main>
 
   <!-- FOOTER -->

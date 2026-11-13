@@ -9,8 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/donate.css">
 </head>
-<body data-theme="light">
+<body class="page-donate" data-theme="light">
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAVIGATION HEADER -->
   <header class="site-header" id="header">
@@ -48,146 +51,141 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- DONATE HERO BANNER -->
-    <section class="donate-hero-banner">
+    <section class="dn-hero">
       <div class="container">
-        <span class="eyebrow">Direct Hospital Bedside Impact</span>
-        <h1 class="donate-hero-title">
-          Bring a Gentle Glow to a <br>
-          <em>Child Fighting in Hospital Care</em>
-        </h1>
-        <p class="donate-hero-sub">
+        <h1>Bring a Gentle Glow to a <em>Child Fighting in Hospital Care</em></h1>
+        <p class="dn-lead">
           When pediatric cancer and transplant patients face long months of isolation at Rady Children&rsquo;s Hospital in San Diego, a personalized glowing light provides continuous comfort, courage, and a reminder that an entire community is cheering for them.
         </p>
 
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 14px;">
-          <span style="background: var(--bg-surface); border: 3px solid var(--border-subtle); padding: 6px 16px; border-radius: 6px; font-size: 0.88rem; font-weight: 600; color: var(--text-headline);">
-            💡 <strong>58+ Lights Donated</strong> Since Dec 2023
-          </span>
-          <span style="background: var(--bg-surface); border: 3px solid var(--border-subtle); padding: 6px 16px; border-radius: 6px; font-size: 0.88rem; font-weight: 600; color: var(--text-headline);">
-            🔋 <strong>Medical-Grade Battery</strong> for Mobility
-          </span>
-          <span style="background: var(--bg-surface); border: 3px solid var(--border-subtle); padding: 6px 16px; border-radius: 6px; font-size: 0.88rem; font-weight: 600; color: var(--text-headline);">
-            🛡️ <strong>501(c)(3) Tax-Deductible</strong>
-          </span>
-        </div>
+        <ul class="dn-facts">
+          <li>
+            <svg class="dn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></svg>
+            <span><strong>58+ Lights Donated</strong> Since Dec 2023</span>
+          </li>
+          <li>
+            <svg class="dn-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="16" height="9" rx="2"/><path d="M21 11v3"/><path d="M7 11v3M11 11v3"/></svg>
+            <span><strong>Medical-Grade Battery</strong> for Mobility</span>
+          </li>
+          <li>
+            <svg class="dn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
+            <span><strong>501(c)(3) Tax-Deductible</strong></span>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- CHOOSE ANY AMOUNT (not everyone can give $265+ — every bit adds up) -->
-    <section class="story-section" style="padding: 56px 0 24px;">
-      <div class="container" style="max-width: 820px;">
-        <div style="text-align: center; margin-bottom: 28px;">
-          <span class="eyebrow">Every Amount Helps</span>
-          <h2 class="section-heading">Give What Feels <em>Right for You</em></h2>
-          <p class="section-lead" style="margin-bottom: 0;">
+    <section class="dn-section dn-alt">
+      <div class="container">
+        <div class="dn-head">
+          <h2>Give What Feels <em>Right for You</em></h2>
+          <p>
             A full light runs $265&ndash;$361, but we know that&rsquo;s not possible for everyone right now &mdash; and that&rsquo;s okay. Smaller gifts add up fast when a community gives together. Pick an amount and send it through Zelle below (no processing fees), or scroll down for the full sponsor packages.
           </p>
         </div>
 
-        <div class="amount-select-grid" id="quickAmountGrid">
-          <a href="#zelle-giving" class="amount-tile" data-amount="5">
+        <div class="dn-amounts" id="quickAmountGrid" role="group" aria-label="Choose a Zelle amount">
+          <button type="button" class="amount-tile" data-amount="5" data-scroll="zelle-giving" aria-pressed="false">
             <strong>$5</strong>
             <span>A Kind Start</span>
-          </a>
-          <a href="#zelle-giving" class="amount-tile" data-amount="10">
+          </button>
+          <button type="button" class="amount-tile" data-amount="10" data-scroll="zelle-giving" aria-pressed="false">
             <strong>$10</strong>
             <span>A Warm Hand</span>
-          </a>
-          <a href="#zelle-giving" class="amount-tile" data-amount="25">
+          </button>
+          <button type="button" class="amount-tile" data-amount="25" data-scroll="zelle-giving" aria-pressed="false">
             <strong>$25</strong>
             <span>A Real Lift</span>
-          </a>
-          <a href="#zelle-giving" class="amount-tile" data-amount="50">
+          </button>
+          <button type="button" class="amount-tile" data-amount="50" data-scroll="zelle-giving" aria-pressed="false">
             <strong>$50</strong>
             <span>Toward a Light</span>
-          </a>
-          <a href="#zelle-giving" class="amount-tile" data-amount="100">
+          </button>
+          <button type="button" class="amount-tile" data-amount="100" data-scroll="zelle-giving" aria-pressed="false">
             <strong>$100</strong>
             <span>Co-Sponsor</span>
-          </a>
-          <a href="#zelle-giving" class="amount-tile" data-amount="200">
+          </button>
+          <button type="button" class="amount-tile" data-amount="200" data-scroll="zelle-giving" aria-pressed="false">
             <strong>$200</strong>
             <span>Nearly a Full Light</span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
 
     <!-- DONATE OPTIONS (Directly from desirayslightsofjoy.org/donate) -->
-    <section class="story-section" id="donate-options" style="padding: 24px 0 56px;">
+    <section class="dn-section" id="donate-options">
       <div class="container">
-        <div style="text-align: center; margin-bottom: 28px;">
-          <span class="eyebrow">Sponsor a Full Light</span>
-          <h2 class="section-heading">Fund One Child&rsquo;s <em>Entire Light</em></h2>
+        <div class="dn-head">
+          <h2>Fund One Child&rsquo;s <em>Entire Light</em></h2>
         </div>
 
-        <div class="donate-options-grid" style="display: grid; gap: 28px; max-width: 980px; margin: 0 auto;">
+        <div class="dn-packages">
 
           <!-- Option 1: Complete Care Set ($361) -->
-          <div class="package-card highlight" style="text-align: center;">
-            <span class="package-highlight-pill">Most Recommended Set</span>
-            <div>
-              <h3 class="pkg-name">Donate TODAY to purchase the set we give to each recipient</h3>
-              <div class="pkg-price">$361 <span>USD</span></div>
-              <p class="pkg-summary" style="text-align: left;">
-                &ndash; 1 personalized neon sign 💡<br>
-                &ndash; 1 rechargeable battery 🔋
-              </p>
-              <p class="pkg-summary" style="text-align: left;">
-                <em>Tip: Consider even a donation with an army of friends to sponsor one of our warrior patients today.</em>
-              </p>
-            </div>
-
-            <a href="https://www.paypal.com/ncp/payment/ACYPDUG7N4VPY" target="_blank" rel="noopener" class="btn btn-primary btn-neon-glow pkg-btn">
+          <article class="dn-package is-featured">
+            <span class="dn-pill">Most Recommended Set</span>
+            <h3>Donate TODAY to purchase the set we give to each recipient</h3>
+            <p class="dn-price">$361 <span>USD</span></p>
+            <ul class="dn-includes">
+              <li>1 personalized neon sign</li>
+              <li>1 rechargeable battery</li>
+            </ul>
+            <p class="dn-tip">
+              <em>Tip: Consider even a donation with an army of friends to sponsor one of our warrior patients today.</em>
+            </p>
+            <a href="https://www.paypal.com/ncp/payment/ACYPDUG7N4VPY" target="_blank" rel="noopener" class="btn btn-primary btn-large">
               Click here to donate &rarr;
             </a>
-          </div>
+          </article>
 
           <!-- Option 2: Neon Sign Only ($265) -->
-          <div class="package-card" style="text-align: center;">
-            <div>
-              <h3 class="pkg-name">💡 Consider donating just the personalized neon sign</h3>
-              <div class="pkg-price">$265 <span>USD</span></div>
-              <p class="pkg-summary">
-                Click the following button. Just you&mdash;or you and what army??? 💪
-              </p>
-            </div>
-
-            <a href="https://www.paypal.com/ncp/payment/S37DXK58DRXBE" target="_blank" rel="noopener" class="btn btn-secondary pkg-btn">
+          <article class="dn-package">
+            <h3>Consider donating just the personalized neon sign</h3>
+            <p class="dn-price">$265 <span>USD</span></p>
+            <p class="dn-tip">
+              Click the following button. Just you&mdash;or you and what army???
+            </p>
+            <a href="https://www.paypal.com/ncp/payment/S37DXK58DRXBE" target="_blank" rel="noopener" class="btn btn-secondary btn-large">
               Click here to donate &rarr;
             </a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ZELLE QR DONATION -->
-    <section class="story-section" id="zelle-giving" style="padding: 0 0 72px; text-align: center;">
+    <section class="dn-section dn-alt" id="zelle-giving" aria-label="Donate through Zelle">
       <div class="container">
-        <p style="font-size: 1.05rem; font-weight: 600; color: var(--text-headline); margin-bottom: 6px;">
-          If you want to make a donation through Zelle you can scan the QR Code and help us with our cause.
-        </p>
-        <p id="selectedAmountNote" style="font-size: 0.95rem; color: var(--rose-text); font-weight: 700; min-height: 1.4em; margin-bottom: 18px;"></p>
+        <div class="dn-zelle">
+          <div class="dn-zelle-copy">
+            <p class="dn-zelle-lead">
+              If you want to make a donation through Zelle you can scan the QR Code and help us with our cause.
+            </p>
+            <p class="dn-amount-note" id="selectedAmountNote" aria-live="polite"></p>
+            <p class="dn-zelle-note">
+              Zelle to <strong>marlene@desirayslightsofjoy.org</strong> &mdash; enter whatever amount you chose above. There&rsquo;s no fixed button for smaller gifts yet, but every dollar is counted and deeply appreciated.
+            </p>
+          </div>
 
-        <div style="max-width: 340px; margin: 0 auto; background: #fff; border-radius: 9px; padding: 24px; box-shadow: var(--shadow-card);">
-          <img src="assets/images/zelle-qrcode.png" alt="Scan this Zelle QR code to pay Desiray's Lights of Joy" style="width: 100%; height: auto; display: block; border-radius: 6px;">
+          <div class="dn-qr">
+            <img src="assets/images/zelle-qrcode.png" width="828" height="828" loading="lazy" decoding="async" alt="Scan this Zelle QR code to pay Desiray's Lights of Joy">
+          </div>
         </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 14px;">
-          Zelle to <strong style="color: var(--rose-text);">marlene@desirayslightsofjoy.org</strong> &mdash; enter whatever amount you chose above. There&rsquo;s no fixed button for smaller gifts yet, but every dollar is counted and deeply appreciated.
-        </p>
       </div>
     </section>
 
     <!-- 501(c)(3) CERTIFICATE NOTE -->
-    <section class="story-section" style="padding: 0 0 72px; border-top: 1px solid var(--border-subtle);">
+    <section class="dn-section dn-note-section">
       <div class="container">
-        <div style="max-width: 760px; margin: 0 auto; background: var(--bg-surface); border: 3px solid var(--border-subtle); border-radius: 9px; padding: 24px; display: flex; gap: 14px; align-items: flex-start;">
-          <span style="font-size: 2rem;">🛡️</span>
+        <div class="dn-note">
+          <svg class="dn-icon dn-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
           <div>
-            <h5 style="font-size: 1rem; font-weight: 700; color: var(--text-headline); margin-bottom: 2px;">501(c)(3) Nonprofit Status</h5>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+            <h2>501(c)(3) Nonprofit Status</h2>
+            <p>
               Desiray&rsquo;s Lights of Joy is an official 501(c)(3) charity incorporated in September 2024. All charitable contributions are fully tax-deductible under U.S. law.
             </p>
           </div>
@@ -196,48 +194,39 @@
     </section>
 
     <!-- DONOR FAQS -->
-    <section class="story-section" style="padding: 0 0 80px; border-top: 1px solid var(--border-subtle);">
+    <section class="dn-section dn-alt">
       <div class="container">
-        <div style="text-align: center;">
-          <span class="eyebrow">Frequently Asked Questions</span>
-          <h2 class="section-heading">Questions from <em>Our Supporters</em></h2>
+        <div class="dn-head">
+          <h2>Questions from <em>Our Supporters</em></h2>
         </div>
 
-        <div class="faq-accordion" style="max-width: 760px; margin: 36px auto 0;">
-          <details class="faq-item">
-            <summary class="faq-question">Can I co-sponsor a light with my friends or coworkers?</summary>
-            <div class="faq-answer">
-              <p>
-                Yes! As we say: <em>&ldquo;Just you &mdash; or you and what army??? 💪&rdquo;</em> You can pool funds together to sponsor a $265 sign or $361 complete care set through either PayPal button above.
-              </p>
-            </div>
+        <div class="dn-faq">
+          <details>
+            <summary>Can I co-sponsor a light with my friends or coworkers?</summary>
+            <p>
+              Yes! As we say: <em>&ldquo;Just you &mdash; or you and what army???&rdquo;</em> You can pool funds together to sponsor a $265 sign or $361 complete care set through either PayPal button above.
+            </p>
           </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">Why is a rechargeable battery included in the $361 set?</summary>
-            <div class="faq-answer">
-              <p>
-                Pediatric transplant patients often have to walk the corridors with IV poles. The rechargeable battery pack allows their sign to be portable, illuminating their path wherever they go in the ward.
-              </p>
-            </div>
+          <details>
+            <summary>Why is a rechargeable battery included in the $361 set?</summary>
+            <p>
+              Pediatric transplant patients often have to walk the corridors with IV poles. The rechargeable battery pack allows their sign to be portable, illuminating their path wherever they go in the ward.
+            </p>
           </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">Does the child get to keep the sign when leaving?</summary>
-            <div class="faq-answer">
-              <p>
-                Yes! Once treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang permanently on their bedroom wall as a badge of honor.
-              </p>
-            </div>
+          <details>
+            <summary>Does the child get to keep the sign when leaving?</summary>
+            <p>
+              Yes! Once treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang permanently on their bedroom wall as a badge of honor.
+            </p>
           </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">How can I donate through Zelle?</summary>
-            <div class="faq-answer">
-              <p>
-                Simply scan the QR code above with your banking app, or send through Zelle directly to <strong>marlene@desirayslightsofjoy.org</strong>.
-              </p>
-            </div>
+          <details>
+            <summary>How can I donate through Zelle?</summary>
+            <p>
+              Simply scan the QR code above with your banking app, or send through Zelle directly to <strong>marlene@desirayslightsofjoy.org</strong>.
+            </p>
           </details>
         </div>
       </div>

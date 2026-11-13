@@ -1,0 +1,429 @@
+/* ==========================================================================
+   DONATE: simple layout (loaded after style.css, donate.html only)
+   Same quiet language as the other pages: flat surfaces, hairlines, generous
+   whitespace. The amounts and the two sponsor packages are the page.
+   ========================================================================== */
+
+.page-donate .container {
+  max-width: 1120px;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+.page-donate main h1,
+.page-donate main h2,
+.page-donate main h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  text-wrap: balance;
+  font-synthesis: none; /* Calistoga has a single weight and no italic */
+}
+
+.page-donate main h1 em,
+.page-donate main h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-primary);
+}
+
+.page-donate main p {
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+/* Flat buttons, same as the other pages (style.css gives them a hard offset shadow) */
+.page-donate main .btn {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.page-donate main .btn:hover {
+  transform: none;
+}
+
+/* ---------- Shared section frame ---------- */
+.dn-section {
+  padding-block: clamp(56px, 8vw, 96px);
+  background: var(--bg-page);
+}
+
+.dn-alt {
+  background: var(--bg-surface);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.dn-section[id] {
+  scroll-margin-top: 88px; /* clear the sticky header when jumping to #donate-options / #zelle-giving */
+}
+
+.dn-head {
+  max-width: 62ch;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.dn-head h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin: 0 0 16px;
+}
+
+.dn-head p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.dn-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--rose-text);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dn-icon--lg {
+  width: 30px;
+  height: 30px;
+}
+
+/* ---------- Hero ---------- */
+.dn-hero {
+  padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 6vw, 72px);
+  background: var(--bg-page);
+}
+
+.dn-hero h1 {
+  max-width: 24ch;
+  font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+  margin: 0 0 20px;
+}
+
+.dn-hero h1 em {
+  display: block;
+}
+
+.dn-lead {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+.dn-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: clamp(28px, 4vw, 44px) 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.dn-facts li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.dn-facts strong {
+  color: var(--text-headline);
+}
+
+/* ---------- Quick amounts ---------- */
+.dn-amounts {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dn-amounts .amount-tile {
+  width: 100%;
+  margin: 0;
+  padding: 20px 8px;
+  font: inherit;
+  border-width: 1px;
+  background: var(--bg-page);
+}
+
+.dn-amounts .amount-tile:hover,
+.dn-amounts .amount-tile.active,
+.dn-amounts .amount-tile[aria-pressed="true"] {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--rose-primary);
+  background: var(--rose-soft);
+}
+
+.dn-amounts .amount-tile strong {
+  font-size: 1.6rem;
+  font-synthesis: none;
+}
+
+.dn-amounts .amount-tile span {
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+/* ---------- Sponsor packages ---------- */
+.dn-packages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  align-items: stretch;
+}
+
+.dn-package {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+}
+
+.dn-package.is-featured {
+  border: 2px solid var(--rose-primary);
+}
+
+.dn-pill {
+  margin-bottom: 14px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--rose-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--rose-text);
+}
+
+.dn-package h3 {
+  max-width: 28ch;
+  font-size: 1.3rem;
+  margin: 0 0 12px;
+}
+
+.page-donate main .dn-price {
+  margin: 0 0 16px;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1;
+  color: var(--rose-text);
+  font-synthesis: none;
+}
+
+.dn-price span {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.dn-includes {
+  list-style: none;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.dn-includes li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-headline);
+}
+
+.page-donate main .dn-tip {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.dn-package .btn {
+  margin-top: auto;
+}
+
+/* ---------- Zelle ---------- */
+.dn-zelle {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 6vw, 80px);
+  align-items: center;
+}
+
+.page-donate main .dn-zelle-lead {
+  max-width: 48ch;
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  line-height: 1.35;
+  color: var(--text-headline);
+  font-synthesis: none;
+}
+
+.page-donate main .dn-amount-note {
+  min-height: 1.4em;
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--rose-text);
+}
+
+.page-donate main .dn-zelle-note {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.dn-zelle-note strong {
+  color: var(--rose-text);
+  overflow-wrap: anywhere;
+}
+
+.dn-qr {
+  width: clamp(220px, 28vw, 300px);
+  padding: 18px;
+  background: #fff; /* a QR code needs a light ground to scan, in both themes */
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.dn-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- 501(c)(3) note ---------- */
+.dn-note-section {
+  padding-block: clamp(36px, 5vw, 56px);
+}
+
+.dn-note {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  max-width: 760px;
+}
+
+.dn-note h2 {
+  font-size: 1.15rem;
+  margin: 0 0 4px;
+}
+
+.dn-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ---------- FAQ ---------- */
+.dn-faq {
+  max-width: 760px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.dn-faq details {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dn-faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  font-weight: 700;
+  color: var(--text-headline);
+  cursor: pointer;
+  list-style: none;
+}
+
+.dn-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* plus / minus drawn with CSS so it follows the text colour */
+.dn-faq summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--rose-text);
+}
+
+.dn-faq details[open] summary::after {
+  content: "\2212";
+}
+
+.dn-faq details p {
+  max-width: 62ch;
+  margin: 0 0 22px;
+  color: var(--text-body);
+}
+
+/* ---------- Browser surfaces ---------- */
+.page-donate :where(a, button, summary):focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+.page-donate ::selection {
+  background: var(--rose-tint);
+  color: var(--text-headline);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--text-headline);
+  color: var(--bg-page);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .dn-amounts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .dn-packages {
+    grid-template-columns: 1fr;
+  }
+
+  .dn-zelle {
+    grid-template-columns: 1fr;
+  }
+
+  .dn-qr {
+    width: min(100%, 280px);
+  }
+}
+
+@media (max-width: 480px) {
+  .dn-amounts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dn-package .btn {
+    width: 100%;
+  }
+}

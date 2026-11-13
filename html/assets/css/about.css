@@ -1,0 +1,383 @@
+/* ==========================================================================
+   ABOUT US: simple layout (loaded after style.css, about.html only)
+   Same quiet language as the home and What We Do pages: flat surfaces, hairlines,
+   generous whitespace, the story and the photos carry the page.
+   ========================================================================== */
+
+.page-about .container {
+  max-width: 1120px;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+/* ---------- Shared section frame ---------- */
+.ab-section {
+  padding-block: clamp(56px, 8vw, 104px);
+  background: var(--bg-page);
+}
+
+.ab-alt {
+  background: var(--bg-surface);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.page-about main h1,
+.page-about main h2,
+.page-about main h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  text-wrap: balance;
+  font-synthesis: none; /* Calistoga has a single weight and no italic */
+}
+
+.page-about main h1 em,
+.page-about main h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-primary);
+}
+
+.page-about main h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin: 0 0 16px;
+}
+
+.page-about main h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+
+.page-about main p {
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.ab-head {
+  max-width: 62ch;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.ab-head p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Hero ---------- */
+.ab-hero {
+  padding: clamp(40px, 6vw, 80px) 0 clamp(48px, 6vw, 80px);
+  background: var(--bg-page);
+}
+
+.ab-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.ab-hero h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  margin: 0 0 20px;
+}
+
+.ab-hero h1 em {
+  display: block;
+}
+
+.ab-lead {
+  max-width: 54ch;
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+.ab-portrait {
+  margin: 0;
+}
+
+.ab-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.ab-portrait figcaption {
+  margin-top: 14px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.ab-portrait figcaption strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text-headline);
+}
+
+.ab-badge {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--rose-text);
+}
+
+.ab-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 40px);
+  margin: clamp(40px, 6vw, 72px) 0 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ab-facts dt {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: var(--text-headline);
+  font-synthesis: none;
+}
+
+.ab-facts dd {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Story timeline ---------- */
+.ab-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ab-timeline > li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.28fr) minmax(0, 0.72fr);
+  gap: clamp(20px, 4vw, 56px);
+  padding-block: clamp(32px, 5vw, 56px);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ab-timeline > li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ab-timeline > li:last-child {
+  padding-bottom: 0;
+}
+
+.ab-when {
+  margin: 4px 0 0;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--rose-text);
+  font-synthesis: none;
+}
+
+.ab-body {
+  max-width: 66ch;
+}
+
+.ab-body h2 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
+.ab-body p {
+  margin: 0 0 1.1em;
+}
+
+.ab-body strong {
+  color: var(--text-headline);
+}
+
+.ab-quote {
+  margin: 1.6em 0 0;
+  padding: 4px 0 4px 22px;
+  border-left: 1px solid var(--rose-border);
+}
+
+.ab-quote p {
+  margin: 0 0 10px;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--text-headline);
+  font-synthesis: none;
+}
+
+.ab-quote cite {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Pink Buffalo Girl ---------- */
+.ab-tribute {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.ab-tribute-copy p {
+  max-width: 62ch;
+  margin: 0 0 1.1em;
+}
+
+.ab-tribute-copy strong {
+  color: var(--text-headline);
+}
+
+.ab-points {
+  list-style: none;
+  margin: 24px 0 32px;
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ab-points li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.ab-points strong {
+  color: var(--text-headline);
+}
+
+.ab-mascot {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Who receives our lights ---------- */
+.ab-receive {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.ab-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 16px;
+  fill: none;
+  stroke: var(--rose-text);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ab-receive p {
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+/* ---------- Closing call to action ---------- */
+.ab-cta .container {
+  max-width: 760px;
+  text-align: center;
+}
+
+.ab-cta p {
+  margin: 0 auto 32px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.ab-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Flat buttons, same as the home page (style.css gives them a hard offset shadow) */
+.page-about main .btn {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.page-about main .btn:hover {
+  transform: none;
+}
+
+/* ---------- Browser surfaces ---------- */
+.page-about :where(a, button):focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+.page-about ::selection {
+  background: var(--rose-tint);
+  color: var(--text-headline);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--text-headline);
+  color: var(--bg-page);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .ab-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ab-receive {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .ab-hero-grid,
+  .ab-tribute {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-timeline > li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .ab-when {
+    margin-top: 0;
+    font-size: 1.05rem;
+  }
+
+  .ab-mascot {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ab-facts {
+    grid-template-columns: 1fr;
+  }
+}
