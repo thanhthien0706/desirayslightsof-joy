@@ -324,8 +324,15 @@
 }
 
 /* ---------- FAQ ---------- */
+/* FAQ sits centred on the page: heading centred, the question list centred under it */
+.dn-faq-section .dn-head {
+  margin-inline: auto;
+  text-align: center;
+}
+
 .dn-faq {
   max-width: 760px;
+  margin-inline: auto;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -367,6 +374,39 @@
   max-width: 62ch;
   margin: 0 0 22px;
   color: var(--text-body);
+  overflow-wrap: anywhere; /* the Zelle email must never push the row wider than a 320px phone */
+}
+
+/* Mouse: the question warms up under the pointer. Touch gets a pressed state instead,
+   so a tap is acknowledged without a hover that sticks. */
+@media (hover: hover) and (pointer: fine) {
+  .dn-faq summary:hover {
+    color: var(--rose-text);
+  }
+}
+
+@media (pointer: coarse) {
+  .dn-faq summary {
+    -webkit-tap-highlight-color: transparent;
+    min-height: 56px;
+    padding-block: 16px;
+  }
+
+  .dn-faq summary:active {
+    background: var(--rose-soft);
+  }
+}
+
+/* Print: show every answer, drop the plus/minus */
+@media print {
+  .dn-faq details::details-content {
+    content-visibility: visible;
+    display: block;
+  }
+
+  .dn-faq summary::after {
+    display: none;
+  }
 }
 
 /* ---------- Browser surfaces ---------- */

@@ -3205,3 +3205,109 @@ svg.icon-inline {
 .pull-quote p {
   font-synthesis: none;
 }
+
+/* ==========================================================================
+   ADAPT: touch, notches, closed drawer, print. Shared by every page.
+   ========================================================================== */
+
+/* Phones with a notch or rounded corners (landscape especially): keep content inside the safe area */
+.site-header,
+.site-footer {
+  padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+}
+
+.site-footer {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Touch: every control is at least 44 x 44 css px, and iOS does not zoom into fields (needs 16px) */
+@media (pointer: coarse) {
+  .theme-switch {
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mobile-menu-toggle {
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    padding: 12px 8px;
+  }
+
+  .nav-link {
+    display: inline-block;
+    padding: 12px 0;
+  }
+
+  .nav-link::after {
+    bottom: 6px;
+  }
+
+  .footer-links-list {
+    gap: 0;
+  }
+
+  .footer-links-list a,
+  .footer-bottom-row a {
+    display: inline-block;
+    padding-block: 11px;
+  }
+
+  .text-link-arrow {
+    margin-top: 0;
+    padding-block: 12px;
+  }
+
+  .text-link,
+  .contact-mail,
+  .ct-list a {
+    display: inline-block;
+    padding-block: 12px;
+  }
+
+  :is(input, select, textarea):not([type="checkbox"], [type="radio"]) {
+    font-size: 16px;
+  }
+}
+
+/* Mobile drawer: while closed it sits off-screen, so also take it out of the tab order and
+   the accessibility tree (visibility flips after the slide-out, immediately on open) */
+@media (max-width: 768px) {
+  .main-nav {
+    visibility: hidden;
+    padding-bottom: max(32px, env(safe-area-inset-bottom));
+    transition:
+      transform var(--trans-smooth),
+      visibility 0s linear 0.3s;
+  }
+
+  .main-nav.menu-open {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+
+/* Print: the page content, without the site chrome */
+@media print {
+  .site-header,
+  .skip-link,
+  .site-footer .footer-columns,
+  .theme-switch,
+  .mobile-menu-toggle,
+  .btn,
+  .amount-tile {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+}
