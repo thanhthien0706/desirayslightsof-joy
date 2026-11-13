@@ -300,29 +300,6 @@
   height: auto;
 }
 
-/* ---------- 501(c)(3) note ---------- */
-.dn-note-section {
-  padding-block: clamp(36px, 5vw, 56px);
-}
-
-.dn-note {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  max-width: 760px;
-}
-
-.dn-note h2 {
-  font-size: 1.15rem;
-  margin: 0 0 4px;
-}
-
-.dn-note p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
 /* ---------- FAQ ---------- */
 /* FAQ sits centred on the page: heading centred, the question list centred under it */
 .dn-faq-section .dn-head {
@@ -465,5 +442,72 @@
 
   .dn-package .btn {
     width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Bolder amount tiles: big figures, a visible border, and a chosen state that fills
+   with the brand pink so the selection cannot be missed.
+   ========================================================================== */
+.dn-amounts {
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.dn-amounts .amount-tile {
+  padding: 30px 8px 26px;
+  border: 2px solid var(--rose-border);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.dn-amounts .amount-tile strong {
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  line-height: 1;
+}
+
+.dn-amounts .amount-tile span {
+  margin-top: 10px;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.dn-amounts .amount-tile:hover {
+  border-color: var(--rose-primary);
+  background: var(--bg-surface);
+}
+
+.dn-amounts .amount-tile[aria-pressed="true"],
+.dn-amounts .amount-tile.active {
+  border-color: var(--rose-primary);
+  background: var(--rose-primary);
+  color: #fff;
+}
+
+.dn-amounts .amount-tile[aria-pressed="true"] strong,
+.dn-amounts .amount-tile[aria-pressed="true"] span,
+.dn-amounts .amount-tile.active strong,
+.dn-amounts .amount-tile.active span {
+  color: inherit;
+}
+
+[data-theme="dark"] .dn-amounts .amount-tile[aria-pressed="true"],
+[data-theme="dark"] .dn-amounts .amount-tile.active {
+  color: var(--bg-page);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dn-amounts .amount-tile:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dn-amounts .amount-tile {
+    transition: none;
+  }
+
+  .dn-amounts .amount-tile:hover {
+    transform: none;
   }
 }

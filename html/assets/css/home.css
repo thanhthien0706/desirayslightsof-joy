@@ -655,6 +655,142 @@ body.home {
   height: auto;
 }
 
+/* ---------- Hero moment: the light switches on ----------
+   The brand is a neon sign in a hospital room. On load the headline's second line flickers
+   on like a tube catching, settles into a faint glow, and the light spills onto the photo.
+   Plays once. Without animation support, or with reduced motion, it simply shows lit. */
+.home .hero-title em {
+  text-shadow: 0 0 24px rgba(255, 79, 160, 0.32);
+  animation: neon-on 1.5s steps(1, end) 0.35s backwards;
+}
+
+@keyframes neon-on {
+  0%   { opacity: 0.12; text-shadow: none; }
+  10%  { opacity: 1;    text-shadow: 0 0 22px rgba(255, 79, 160, 0.8); }
+  16%  { opacity: 0.2;  text-shadow: none; }
+  26%  { opacity: 1;    text-shadow: 0 0 22px rgba(255, 79, 160, 0.8); }
+  31%  { opacity: 0.4;  text-shadow: 0 0 6px rgba(255, 79, 160, 0.4); }
+  40%  { opacity: 1;    text-shadow: 0 0 28px rgba(255, 79, 160, 0.85); }
+  100% { opacity: 1;    text-shadow: 0 0 24px rgba(255, 79, 160, 0.32); }
+}
+
+.home .hero-visual-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.home .hero-visual-frame::before {
+  content: "";
+  position: absolute;
+  inset: 4% 2%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 79, 160, 0.34), rgba(255, 79, 160, 0) 100%);
+  filter: blur(18px);
+  animation: light-spill 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.9s backwards;
+}
+
+@keyframes light-spill {
+  from { opacity: 0; transform: scale(0.85); }
+}
+
+/* ---------- Bolder hero: bigger voice, bigger picture ---------- */
+.home .hero-section {
+  padding: clamp(56px, 8vw, 112px) 0 clamp(40px, 6vw, 80px);
+}
+
+.home .hero-grid {
+  max-width: 1280px;
+}
+
+.home .hero-title {
+  margin-bottom: clamp(24px, 3vw, 36px);
+  font-size: clamp(2.6rem, 4.9vw, 4.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+}
+
+.home .hero-description {
+  max-width: 34em;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+}
+
+.home .hero-actions .btn-large {
+  padding: 18px 36px;
+  font-size: 1.12rem;
+}
+
+.home .hero-visual-frame {
+  max-width: 720px;
+}
+
+.home .hero-visual-frame::before {
+  background: radial-gradient(closest-side, rgba(255, 79, 160, 0.5), rgba(255, 79, 160, 0) 100%);
+}
+
+@media (min-width: 861px) {
+  .home .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .home .hero-title {
+    font-size: clamp(2.6rem, 11vw, 3.8rem);
+  }
+}
+
+/* ---------- Overdrive: the photo leans toward the pointer ----------
+   hero.js feeds --px / --py (-1 to 1). They stay 0 for touch, reduced motion and no JS, so
+   without them the picture just sits still. */
+.home .hero-visual-frame {
+  --px: 0;
+  --py: 0;
+  perspective: 900px;
+}
+
+.home .hero-art {
+  transform: rotateY(calc(var(--px) * 9deg)) rotateX(calc(var(--py) * -7deg));
+  translate: calc(var(--px) * 10px) calc(var(--py) * 8px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), translate 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* the glow sits further back, so it slides the opposite way, farther */
+.home .hero-visual-frame::before {
+  translate: calc(var(--px) * -28px) calc(var(--py) * -22px);
+  transition: translate 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home .hero-art,
+  .home .hero-visual-frame::before {
+    transition: none;
+  }
+}
+
+/* the arrow leans toward where the gift goes (mouse only) */
+@media (hover: hover) and (pointer: fine) {
+  .home .btn-donate span:last-child {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .home .btn-donate:hover span:last-child {
+    transform: translateX(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home .hero-title em,
+  .home .hero-visual-frame::before {
+    animation: none;
+  }
+
+  .home .btn-donate span:last-child {
+    transition: none;
+  }
+}
+
 /* Inline icon sprite (index.html): takes no space, only supplies <symbol>s */
 .icon-sprite {
   position: absolute;
