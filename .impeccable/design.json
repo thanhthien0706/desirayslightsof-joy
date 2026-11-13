@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: Desiray's Lights of Joy",
+  "extensions": {
+    "colorMeta": {
+      "rose-primary": {
+        "role": "primary",
+        "displayName": "Desiray Rose",
+        "canonical": "#d6336f",
+        "tonalRamp": [
+          "#4a0f27",
+          "#7a1740",
+          "#a5214f",
+          "#d6336f",
+          "#e8689a",
+          "#f19abf",
+          "#f9cadf",
+          "#fdeaf1"
+        ]
+      },
+      "neon-pink": {
+        "role": "primary",
+        "displayName": "Neon Pink",
+        "canonical": "#ff4fa0",
+        "tonalRamp": [
+          "#5c0a31",
+          "#8f1250",
+          "#c42070",
+          "#ff4fa0",
+          "#ff77b6",
+          "#ff9fcb",
+          "#ffc8e0",
+          "#ffe8f2"
+        ]
+      },
+      "plum-ink": {
+        "role": "neutral",
+        "displayName": "Plum Ink",
+        "canonical": "#2a1620",
+        "tonalRamp": [
+          "#140a0f",
+          "#2a1620",
+          "#4f3340",
+          "#6e5160",
+          "#8a6d79",
+          "#b59ea9",
+          "#ecc9db",
+          "#fff8fb"
+        ]
+      },
+      "page-blush": {
+        "role": "neutral",
+        "displayName": "Blush Page",
+        "canonical": "#fff8fb",
+        "tonalRamp": [
+          "#140d16",
+          "#1e1320",
+          "#2a1b2e",
+          "#8a6d79",
+          "#ecc9db",
+          "#fbd9e7",
+          "#fdeaf1",
+          "#fff8fb"
+        ]
+      },
+      "filament-amber": {
+        "role": "tertiary",
+        "displayName": "Filament Amber",
+        "canonical": "#ffb020",
+        "tonalRamp": [
+          "#4d3000",
+          "#7a4c00",
+          "#a86a00",
+          "#d98c00",
+          "#ffb020",
+          "#ffc85c",
+          "#ffdf9e",
+          "#fff2d6"
+        ]
+      },
+      "rose-text": {
+        "role": "primary",
+        "displayName": "Rose Text",
+        "canonical": "#b3215a",
+        "tonalRamp": [
+          "#3d0a1f",
+          "#650f33",
+          "#8a1745",
+          "#b3215a",
+          "#d6336f",
+          "#e8689a",
+          "#f19abf",
+          "#fdeaf1"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero title only, with one italic rose phrase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "handwriting": {
+        "displayName": "Handwriting",
+        "purpose": "Family notes and guestbook messages."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-small",
+        "value": "2px 2px 0 rgba(42,22,32,0.08)",
+        "purpose": "Resting cards and toggles."
+      },
+      {
+        "name": "paper-card",
+        "value": "4px 4px 0 rgba(42,22,32,0.1)",
+        "purpose": "Raised cards."
+      },
+      {
+        "name": "rose-hover",
+        "value": "6px 6px 0 rgba(214,51,111,0.35)",
+        "purpose": "Hovered cards."
+      },
+      {
+        "name": "neon-tube",
+        "value": "0 0 10px rgba(255,64,150,0.75), 0 0 22px rgba(214,51,111,0.45), 0 0 38px rgba(214,51,111,0.22)",
+        "purpose": "Glow on literal lights only."
+      },
+      {
+        "name": "neon-button",
+        "value": "0 0 14px rgba(255,64,150,0.55), 0 0 28px rgba(214,51,111,0.3)",
+        "purpose": "Donate CTA hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "trans-smooth",
+        "value": "0.3s cubic-bezier(0.25, 0.8, 0.25, 1)",
+        "purpose": "Card and button state changes."
+      },
+      {
+        "name": "trans-fast",
+        "value": "0.18s ease",
+        "purpose": "Links, tiles, fields."
+      },
+      {
+        "name": "led-flicker-on",
+        "value": "0.45s linear 1",
+        "purpose": "A light stutters once, then settles."
+      },
+      {
+        "name": "led-breathe",
+        "value": "2.4s ease-in-out infinite",
+        "purpose": "A lit light gently breathes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "mobile",
+        "value": "768px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Standard call to action with plum outline and hard offset shadow.",
+      "html": "<button class=\"ds-btn-primary\">Share a message</button>",
+      "css": ".ds-btn-primary{background:#d6336f;color:#fff;font:700 .96rem 'Libre Franklin',sans-serif;padding:11px 24px;border:3px solid #2a1620;border-radius:6px;box-shadow:3px 3px 0 #2a1620;cursor:pointer;transition:all .3s cubic-bezier(.25,.8,.25,1)}.ds-btn-primary:hover{background:#b3215a;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #2a1620}.ds-btn-primary:focus-visible{outline:3px solid #2a1620;outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet alternative action.",
+      "html": "<button class=\"ds-btn-secondary\">Learn more</button>",
+      "css": ".ds-btn-secondary{background:#fff;color:#2a1620;font:700 .96rem 'Libre Franklin',sans-serif;padding:11px 24px;border:3px solid #2a1620;border-radius:6px;cursor:pointer;transition:all .3s}.ds-btn-secondary:hover{border-color:#d6336f;color:#d6336f;background:#fdeaf1}.ds-btn-secondary:focus-visible{outline:3px solid #d6336f;outline-offset:3px}"
+    },
+    {
+      "name": "Donate Button",
+      "kind": "button",
+      "refersTo": "button-donate",
+      "description": "Pill with an LED bead that lights up on hover.",
+      "html": "<button class=\"ds-donate\"><i></i>Donate</button>",
+      "css": ".ds-donate{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(155deg,#d6336f,#b3215a);color:#fff;font:700 .96rem 'Libre Franklin',sans-serif;padding:11px 24px;border:0;border-radius:999px;box-shadow:0 3px 10px rgba(214,51,111,.28);cursor:pointer;transition:all .3s}.ds-donate i{width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.55),rgba(255,255,255,.08) 45%,rgba(0,0,0,.25))}.ds-donate:hover,.ds-donate:focus-visible{transform:translateY(-2px);box-shadow:0 8px 22px rgba(214,51,111,.4),0 0 14px rgba(255,64,150,.55),0 0 28px rgba(214,51,111,.3)}.ds-donate:hover i,.ds-donate:focus-visible i{background:radial-gradient(circle at 35% 30%,#fff,#ffd3e8 55%,#ff8fc0);box-shadow:0 0 4px 1px #fff,0 0 10px 3px #ff8fc0,0 0 20px 6px rgba(255,79,160,.75)}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field-control",
+      "description": "Form input with thick hairline-rose border.",
+      "html": "<input class=\"ds-field\" placeholder=\"Your name\">",
+      "css": ".ds-field{width:240px;padding:12px 16px;border:3px solid #ecc9db;border-radius:6px;font:.95rem 'Libre Franklin',sans-serif;color:#2a1620;background:#fff;outline:none;transition:border-color .18s}.ds-field:focus{border-color:#d6336f}"
+    },
+    {
+      "name": "Amount Tile",
+      "kind": "chip",
+      "refersTo": "amount-tile",
+      "description": "Preset donation amount; active state shown.",
+      "html": "<a class=\"ds-tile\"><strong>$25</strong><span>One bulb</span></a>",
+      "css": ".ds-tile{display:block;width:96px;text-align:center;background:#fff;border:3px solid #ecc9db;border-radius:6px;padding:16px 6px;cursor:pointer;transition:all .18s}.ds-tile strong{display:block;font:700 1.35rem Calistoga,Georgia,serif;color:#2a1620}.ds-tile span{display:block;margin-top:2px;font:600 .7rem 'Libre Franklin',sans-serif;color:#8a6d79}.ds-tile:hover{border-color:#d6336f;background:#fdeaf1;transform:translate(-1px,-1px);box-shadow:3px 3px 0 #d6336f}.ds-tile:hover strong{color:#d6336f}"
+    },
+    {
+      "name": "Light Card",
+      "kind": "card",
+      "refersTo": "light-card",
+      "description": "Gallery card for a donated light.",
+      "html": "<article class=\"ds-card\"><h3>Cataleya</h3><p>A bedside light in her favorite pink.</p></article>",
+      "css": ".ds-card{width:260px;background:#fff;border:3px solid #ecc9db;border-radius:9px;padding:20px;box-shadow:2px 2px 0 rgba(42,22,32,.08);transition:all .3s cubic-bezier(.25,.8,.25,1)}.ds-card h3{font:700 1.35rem Calistoga,Georgia,serif;color:#2a1620;margin:0 0 6px}.ds-card p{font:.9rem/1.6 'Libre Franklin',sans-serif;color:#4f3340;margin:0}.ds-card:hover{transform:translateY(-6px);border-color:#d6336f;box-shadow:6px 6px 0 rgba(214,51,111,.35)}"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header link with growing rose underline.",
+      "html": "<a class=\"ds-nav\" href=\"#\">What We Do</a>",
+      "css": ".ds-nav{position:relative;padding:6px 0;font:600 .94rem 'Libre Franklin',sans-serif;color:#2a1620;text-decoration:none}.ds-nav::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:#d6336f;border-radius:2px;transition:width .18s}.ds-nav:hover{color:#d6336f}.ds-nav:hover::after{width:100%}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Nightlight Scrapbook",
+    "overview": "Pink-by-day scrapbook, neon-by-night. Warm blush paper, plum ink, thick outlines, hard offset shadows; glow reserved for things that are literally lights.",
+    "keyCharacteristics": [
+      "Pink-on-blush by day, neon-on-plum by night, same token names in both themes.",
+      "Chunky 3px plum outlines with hard, un-blurred offset shadows.",
+      "Calistoga display serif, Libre Franklin body, Caveat for the handwritten voice.",
+      "Real LED behavior on exactly the elements that are lights.",
+      "Photography of real donated lights and real children leads; ornament follows."
+    ],
+    "rules": [
+      {
+        "name": "The Pink Is Memory Rule",
+        "body": "Pink is the one chromatic hue of the interface. The single exception is Filament Amber, which belongs to bulb glass in the hero garland and nowhere else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Plum, Never Black Rule",
+        "body": "Outlines, shadows, and text use Plum Ink (#2a1620), never #000, except the photo mat behind neon lights.",
+        "section": "colors"
+      },
+      {
+        "name": "The Literal Light Rule",
+        "body": "Glow, flicker, and breathing belong only to things that are lights.",
+        "section": "colors"
+      },
+      {
+        "name": "The Italic Pink Rule",
+        "body": "One emphasized phrase per serif heading goes italic, regular weight, in Desiray Rose.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hard Shadow Rule",
+        "body": "Resting shadows have zero blur.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the existing CSS custom properties; both themes depend on them.",
+      "Do keep 3px plum outlines with zero-blur offset shadows on raised UI.",
+      "Do reserve glow and flicker for literal lights, and honor prefers-reduced-motion.",
+      "Do keep the shared header, footer, and theme toggle identical across every HTML page.",
+      "Do run every new piece of user text through escapeHTML.",
+      "Do verify a new component in both Lights On and Lights Off."
+    ],
+    "donts": [
+      "Don't use soft gray blur shadows or 1px hairline cards as the primary container style.",
+      "Don't use pure black for outlines or text, except the photo mat.",
+      "Don't use clinical hospital blue, stock-photo smiles, or pity-driven imagery.",
+      "Don't put glow on headings, cards, or decorative blobs.",
+      "Don't rely on border color alone for focus on form fields.",
+      "Don't add a second brand hue or spread Filament Amber beyond bulb glass; the old tan/terracotta hero tokens were removed.",
+      "Don't use more than three bulb colors in the garland (Neon Pink, Filament Amber, Deep Rose) or more than about ten bulbs."
+    ]
+  }
+}

@@ -4,11 +4,11 @@
    Plain CSS, no framework.
    ========================================================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap");
 
 :root {
   /* Soft Pink Daytime Palette (default) */
   --rose-primary: #d6336f;
+  --rose-text: #b3215a; /* AA-safe pink for small text (>=4.9:1 on every blush band) */
   --rose-hover: #b3215a;
   --rose-soft: #fdeaf1;
   --rose-tint: #fbd9e7;
@@ -25,7 +25,7 @@
   /* Typography Colors */
   --text-headline: #2a1620;
   --text-body: #4f3340;
-  --text-muted: #8a6d79;
+  --text-muted: #74566a;
   --text-white: #ffffff;
   --border-subtle: #ecc9db;
   --border-strong: #2a1620;
@@ -70,6 +70,7 @@
 /* "Lights Off" Mode — the room goes dark, the neon keeps glowing */
 [data-theme="dark"] {
   --rose-primary: #ff4fa0;
+  --rose-text: #ff4fa0;
   --rose-hover: #ff77b6;
   --rose-soft: #2a1b24;
   --rose-tint: #351f2c;
@@ -134,7 +135,7 @@ img {
 }
 
 a {
-  color: var(--rose-primary);
+  color: var(--rose-text);
   text-decoration: none;
   transition: color var(--trans-fast);
 }
@@ -166,7 +167,7 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   margin-bottom: 14px;
 }
 
@@ -322,6 +323,15 @@ button {
   box-shadow:
     0 2px 6px rgba(214, 51, 111, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Lights Off mode: --rose-primary is a bright neon pink, so white label text
+   falls to ~3:1. Filled pink buttons carry the dark page ink instead (~6:1). */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-donate,
+[data-theme="dark"] .btn-donate:hover {
+  color: var(--bg-page);
 }
 
 /* A real LED doesn't snap on instantly — it stutters once, then settles */
@@ -495,13 +505,13 @@ button {
 
 .btn-secondary:hover {
   border-color: var(--rose-primary);
-  color: var(--rose-primary);
+  color: var(--rose-text);
   background-color: var(--rose-soft);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   border: var(--border-w) solid var(--rose-primary);
 }
 
@@ -664,7 +674,7 @@ button {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .nav-link:hover::after,
@@ -701,6 +711,7 @@ button {
    ========================================================================== */
 
 .hero-section {
+  overflow-x: clip;
   padding: 64px 0 84px;
   background: linear-gradient(180deg, var(--rose-tint) 0%, var(--bg-page) 100%);
   position: relative;
@@ -721,31 +732,20 @@ button {
   gap: 60px;
 }
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--rose-primary);
-  background-color: var(--rose-soft);
-  border: 1px solid var(--rose-border);
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
-  margin-bottom: 20px;
-}
-
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 3.3rem;
+  font-size: clamp(2.2rem, 3.9vw, 3.4rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.02;
   color: var(--text-headline);
-  margin-bottom: 22px;
-  letter-spacing: -0.5px;
+  margin-bottom: 28px;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .hero-title em {
+  display: block;
+  margin-top: 0.08em;
   font-style: italic;
   font-weight: 400;
   color: var(--rose-primary);
@@ -753,10 +753,16 @@ button {
 
 .hero-description {
   font-size: 1.15rem;
-  color: var(--text-muted);
-  line-height: 1.75;
-  margin-bottom: 34px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 36px;
   max-width: 540px;
+}
+
+.hero-description strong {
+  font-weight: 700;
+  color: var(--text-headline);
+  background: linear-gradient(transparent 58%, color-mix(in srgb, var(--rose-primary) 24%, transparent) 58%);
 }
 
 .hero-actions {
@@ -785,175 +791,11 @@ button {
   gap: 6px;
 }
 
-/* Authentic Photo Frame for Real Neon Sign */
 .hero-visual-frame {
   position: relative;
-}
-
-.hero-photo-card {
-  background: var(--bg-surface);
-  border: var(--border-w-lg) solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  box-shadow: var(--shadow-photo);
-  position: relative;
-}
-
-.hero-photo-wrapper {
-  position: relative;
-  /* room for the fairy lights to sit just outside the photo's edge */
-  padding: 14px;
-}
-
-/* Warm watercolor/blob glow bleeding out from behind the photo */
-.hero-photo-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -8%;
-  z-index: 0;
-  /* 🎨 Customize the glow color here */
-  background: radial-gradient(
-    circle at 38% 32%,
-    rgba(255, 196, 94, 0.55) 0%,
-    rgba(255, 158, 62, 0.32) 45%,
-    rgba(255, 158, 62, 0) 75%
-  );
-  border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%;
-  filter: blur(28px);
-  animation: blobGlowPulse 6s ease-in-out infinite;
-}
-
-[data-theme="dark"] .hero-photo-wrapper::before {
-  background: radial-gradient(
-    circle at 38% 32%,
-    rgba(255, 186, 94, 0.45) 0%,
-    rgba(255, 140, 50, 0.3) 45%,
-    rgba(255, 140, 50, 0) 75%
-  );
-}
-
-.hero-real-img {
-  position: relative;
-  z-index: 2;
-  display: block;
   width: 100%;
-  height: 380px;
-  object-fit: cover;
-  /* Organic torn-paper / brush-stroke mask — tweak these points to reshape the tear */
-  clip-path: polygon(
-    3% 0%, 28% 2%, 54% 0%, 79% 3%, 97% 10%,
-    100% 30%, 96% 52%, 100% 74%, 94% 94%,
-    70% 98%, 46% 100%, 22% 97%, 4% 90%,
-    0% 68%, 3% 44%, 0% 20%
-  );
-  filter: drop-shadow(3px 4px 0 rgba(42, 22, 32, 0.14));
-  transition: transform var(--trans-smooth);
-}
-
-.hero-photo-card:hover .hero-real-img {
-  transform: scale(1.02);
-}
-
-.hero-photo-badge {
-  position: absolute;
-  z-index: 4;
-  top: 14px;
-  left: 14px;
-  background: rgba(36, 20, 30, 0.85);
-  backdrop-filter: blur(8px);
-  color: #ffffff;
-  padding: 5px 12px;
-  border-radius: var(--radius-sm);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* ---- Perimeter Fairy Lights (closed loop around the photo) ---- */
-.hero-fairy-lights {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  pointer-events: none;
-}
-
-.bulb {
-  position: absolute;
-  width: clamp(8px, 1.6vw, 14px);
-  height: clamp(8px, 1.6vw, 14px);
-  border-radius: 50%;
-  /* 🎨 Customize the bulb color here */
-  background: radial-gradient(
-    circle at 35% 30%,
-    #fff6d8 0%,
-    var(--light-color, #ffcf4d) 55%,
-    #f59b1d 100%
-  );
-  filter: drop-shadow(0 0 8px var(--light-glow, rgba(255, 200, 50, 0.85)));
-  /* ⏱️ Customize twinkle speed per group below */
-  animation: twinkle var(--twinkle-dur, 1.8s) ease-in-out infinite;
-  animation-delay: var(--twinkle-delay, 0s);
-}
-
-/* 4 staggered groups so the string twinkles like fireflies, not all at once */
-.bulb.group-1 {
-  --twinkle-dur: 1.2s;
-  --twinkle-delay: 0s;
-}
-.bulb.group-2 {
-  --twinkle-dur: 1.8s;
-  --twinkle-delay: 0.4s;
-}
-.bulb.group-3 {
-  --twinkle-dur: 2.5s;
-  --twinkle-delay: 0.9s;
-}
-.bulb.group-4 {
-  --twinkle-dur: 2.1s;
-  --twinkle-delay: 1.3s;
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.35;
-    filter: drop-shadow(0 0 4px var(--light-glow, rgba(255, 200, 50, 0.5)));
-  }
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 10px var(--light-glow, rgba(255, 200, 50, 0.95)));
-  }
-}
-
-@keyframes blobGlowPulse {
-  0%,
-  100% {
-    opacity: 0.85;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.04);
-  }
-}
-
-.hero-photo-caption {
-  padding: 16px 8px 4px;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-.hero-photo-caption strong {
-  color: var(--text-headline);
-  display: block;
-  font-size: 0.94rem;
-  margin-bottom: 2px;
+  max-width: 560px; /* source photo is 654px: never stretch it past ~1x */
+  margin-inline: auto;
 }
 
 /* ==========================================================================
@@ -1071,7 +913,7 @@ button {
   padding-top: 20px;
   font-family: var(--font-handwriting);
   font-size: 1.35rem;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   line-height: 1.4;
 }
 
@@ -1164,7 +1006,7 @@ button {
   font-family: var(--font-serif);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   background: var(--rose-soft);
   display: inline-block;
   padding: 4px 12px;
@@ -1385,7 +1227,7 @@ button {
 
 .card-unit-label {
   font-size: 0.85rem;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -1405,7 +1247,7 @@ button {
   border-top: 1px solid var(--border-subtle);
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .bedside-light-card:hover .card-read-action {
@@ -1468,7 +1310,7 @@ button {
 
 .modal-close-btn:hover {
   background: var(--rose-soft);
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .modal-neon-header {
@@ -1506,7 +1348,7 @@ button {
 
 .modal-pill {
   background: var(--rose-soft);
-  color: var(--rose-primary);
+  color: var(--rose-text);
   border: 1px solid var(--rose-border);
   padding: 3px 12px;
   border-radius: var(--radius-sm);
@@ -1529,7 +1371,7 @@ button {
 
 .modal-hospital-sub {
   font-size: 0.94rem;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -1561,7 +1403,7 @@ button {
   display: block;
   font-size: 0.84rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-style: normal;
 }
 
@@ -1640,7 +1482,7 @@ button {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   display: block;
   line-height: 1;
 }
@@ -1753,7 +1595,7 @@ button {
 }
 
 .amount-tile.active strong {
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .amount-tile span {
@@ -1801,7 +1643,7 @@ button {
   top: 50%;
   transform: translateY(-50%);
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-size: 1.1rem;
 }
 
@@ -1874,7 +1716,7 @@ button {
 .pay-tab-btn:hover {
   background: var(--rose-soft);
   border-color: var(--rose-primary);
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .btn-submit-donation {
@@ -1983,7 +1825,7 @@ button {
 .note-dedication-tag {
   display: inline-block;
   background: var(--rose-soft);
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-size: 0.76rem;
   font-weight: 700;
   padding: 2px 10px;
@@ -2086,7 +1928,7 @@ button {
 .merch-cause-tag {
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 /* ==========================================================================
@@ -2134,6 +1976,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #ffffff;
+  margin-top: 1.33em; /* footer titles are <h3> now (was <h4>): keep the old spacing */
   margin-bottom: 18px;
 }
 
@@ -2273,7 +2116,7 @@ button {
 .pkg-header-tag {
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 8px;
@@ -2291,7 +2134,7 @@ button {
   font-family: var(--font-serif);
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   line-height: 1;
   margin-bottom: 12px;
 }
@@ -2341,14 +2184,14 @@ button {
 /* Zelle Direct Card */
 .zelle-real-box {
   background: var(--bg-surface);
-  border: var(--border-w-lg) solid #7414ca;
+  border: var(--border-w-lg) solid var(--rose-primary);
   border-radius: var(--radius-md);
   padding: 26px;
   margin: 18px 0;
 }
 
 [data-theme="dark"] .zelle-real-box {
-  background: #25122b;
+  background: var(--bg-card);
 }
 
 .zelle-top-line {
@@ -2361,7 +2204,7 @@ button {
 .zelle-brand-title {
   font-size: 1.15rem;
   font-weight: 800;
-  color: #7414ca;
+  color: var(--rose-text);
 }
 
 .zelle-badge-zero {
@@ -2401,20 +2244,20 @@ button {
 
 .zelle-data-row strong {
   font-size: 1.05rem;
-  color: #7414ca;
+  color: var(--rose-text);
   word-break: break-all;
 }
 
 .zelle-qr-preview-frame {
-  border: 1.5px dashed #7414ca;
+  border: 1.5px dashed var(--rose-primary);
   border-radius: var(--radius-sm);
   padding: 12px;
   text-align: center;
-  background: #fbf9fe;
+  background: var(--rose-soft);
 }
 
 [data-theme="dark"] .zelle-qr-preview-frame {
-  background: #1b0a21;
+  background: var(--bg-warm-tint);
 }
 
 .qr-code-graphic {
@@ -2423,8 +2266,8 @@ button {
   margin: 0 auto 6px;
   background: repeating-linear-gradient(
     45deg,
-    #7414ca,
-    #7414ca 8px,
+    var(--rose-primary),
+    var(--rose-primary) 8px,
     #ffffff 8px,
     #ffffff 16px
   );
@@ -2443,7 +2286,7 @@ button {
 
 .qr-caption {
   font-size: 0.74rem;
-  color: #7414ca;
+  color: var(--rose-text);
   font-weight: 700;
 }
 
@@ -2632,7 +2475,7 @@ button {
   min-height: 50px;
   background: var(--bg-surface);
   border: var(--border-w) solid var(--rose-primary);
-  color: var(--rose-primary);
+  color: var(--rose-text);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -2661,7 +2504,7 @@ button {
 .entry-date {
   display: inline-block;
   background: var(--rose-soft);
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -2707,7 +2550,7 @@ button {
   font-style: normal;
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   margin-top: 6px;
 }
 
@@ -2824,7 +2667,7 @@ svg.icon-inline {
 
 .trust-item svg.icon-inline,
 .security-trust-note svg.icon-inline {
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 /* ==========================================================================
@@ -2840,7 +2683,7 @@ svg.icon-inline {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   margin-bottom: 14px;
 }
 
@@ -2881,7 +2724,7 @@ svg.icon-inline {
   display: inline-block;
   margin-top: 10px;
   font-weight: 700;
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .text-link-arrow:hover {
@@ -2910,25 +2753,34 @@ svg.icon-inline {
   margin: 56px auto 0;
   text-align: center;
   position: relative;
-  padding: 0 32px;
+  padding: 36px 40px 32px;
+  background: var(--rose-tint);
+  border: var(--border-w) solid var(--border-warm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
 }
 
 .pull-quote .quote-mark {
   display: block;
   font-family: var(--font-serif);
-  font-size: 3.5rem;
-  line-height: 1;
-  color: var(--rose-border);
-  margin-bottom: 4px;
+  font-size: 4.5rem;
+  line-height: 0.8;
+  height: 0.5em;
+  color: var(--rose-primary);
+  margin-bottom: 12px;
 }
 
 .pull-quote p {
   font-family: var(--font-serif);
   font-size: 1.6rem;
-  font-style: italic;
   line-height: 1.5;
   color: var(--text-headline);
-  margin-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.pull-quote p strong {
+  font-weight: inherit;
+  color: var(--rose-text);
 }
 
 .pull-quote cite {
@@ -2939,7 +2791,7 @@ svg.icon-inline {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--rose-primary);
+  color: var(--text-body);
 }
 
 /* ==========================================================================
@@ -2976,30 +2828,63 @@ svg.icon-inline {
    ========================================================================== */
 
 .lights-card-grid.bento {
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 240px;
-}
-
-.lights-card-grid.bento .real-light-card.featured {
-  grid-column: span 2;
+  /* 6 columns: 4+2 / 2+4 / 3+3 — every row fills, no orphan cell */
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: clamp(190px, 18.5vw, 270px);
+  gap: 20px;
 }
 
 .lights-card-grid.bento .real-light-card {
-  display: flex;
-  flex-direction: column;
+  grid-column: span 2;
+  position: relative;
+  display: block;
   height: 100%;
+  border-width: var(--border-w);
+  border-radius: var(--radius-md);
+}
+
+.lights-card-grid.bento .real-light-card.featured {
+  grid-column: span 4;
+}
+
+.lights-card-grid.bento .real-light-card:nth-child(5),
+.lights-card-grid.bento .real-light-card:nth-child(6) {
+  grid-column: span 3;
 }
 
 .lights-card-grid.bento .real-light-card img {
-  flex: 1 1 auto;
-  min-height: 0;
+  position: absolute;
+  inset: 0;
+  height: 100%;
   aspect-ratio: auto;
-  width: 100%;
   object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lights-card-grid.bento .real-light-card:hover img,
+.lights-card-grid.bento .real-light-card:focus-visible img {
+  transform: scale(1.04);
 }
 
 .lights-card-grid.bento .real-light-card .real-light-name {
-  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+  padding: 44px 18px 14px;
+  font-family: var(--font-handwriting);
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff3f8;
+  background: linear-gradient(to top, rgba(20, 13, 22, 0.85), rgba(20, 13, 22, 0));
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.lights-card-grid.bento .real-light-card.featured .real-light-name {
+  font-size: 2.3rem;
+  padding: 56px 24px 18px;
 }
 
 /* ==========================================================================
@@ -3027,7 +2912,7 @@ svg.icon-inline {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: var(--rose-primary);
+  color: var(--rose-text);
   display: block;
   margin-bottom: 4px;
 }
@@ -3090,14 +2975,14 @@ svg.icon-inline {
   height: 28px;
   border-radius: 50%;
   border: var(--border-w) solid var(--rose-primary);
-  color: var(--rose-primary);
+  color: var(--rose-text);
   font-size: 1.1rem;
   line-height: 1;
   transition: transform var(--trans-fast), background-color var(--trans-fast), color var(--trans-fast);
 }
 
 .faq-question:hover {
-  color: var(--rose-primary);
+  color: var(--rose-text);
 }
 
 .faq-item[open] .faq-question::after {
@@ -3142,9 +3027,6 @@ svg.icon-inline {
   }
   .who-receives-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .hero-title {
-    font-size: 2.7rem;
   }
   .impact-strip-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3192,6 +3074,15 @@ svg.icon-inline {
   .step-box:nth-child(4) {
     margin-top: 0;
   }
+  .lights-card-grid.bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: clamp(200px, 32vw, 300px);
+  }
+  .lights-card-grid.bento .real-light-card,
+  .lights-card-grid.bento .real-light-card:nth-child(5),
+  .lights-card-grid.bento .real-light-card:nth-child(6) {
+    grid-column: span 1;
+  }
   .lights-card-grid.bento .real-light-card.featured {
     grid-column: span 2;
   }
@@ -3229,9 +3120,6 @@ svg.icon-inline {
   .mobile-menu-toggle {
     display: flex;
   }
-  .hero-title {
-    font-size: 2.2rem;
-  }
   .impact-strip-grid {
     grid-template-columns: 1fr;
   }
@@ -3241,11 +3129,18 @@ svg.icon-inline {
   .lights-card-grid {
     grid-template-columns: 1fr;
   }
+  .lights-card-grid.bento {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+  .lights-card-grid.bento .real-light-card,
   .lights-card-grid.bento .real-light-card.featured {
     grid-column: span 1;
+    aspect-ratio: 16 / 10;
   }
   .pull-quote {
-    padding: 0 12px;
+    padding: 28px 20px 24px;
   }
   .pull-quote p {
     font-size: 1.3rem;
@@ -3278,4 +3173,35 @@ svg.icon-inline {
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* ==========================================================================
+   Display serif: Calistoga ships a single weight (400) and no italic.
+   Stop the browser faking bold/oblique, which smears the strokes.
+   ========================================================================== */
+.section-heading,
+.hero-title,
+.impact-num,
+.letter-card h3,
+.step-count,
+.card-child-name,
+.modal-name-heading,
+.donation-story-col h3,
+.tier-price-box strong,
+.form-box-title,
+.amount-tile strong,
+.guestbook-form-card h3,
+.merch-body h4,
+.footer-quote,
+.donate-hero-title,
+.pkg-name,
+.pkg-price,
+.about-hero-title,
+.quick-fact-item strong,
+.entry-marker,
+.entry-title,
+.tribute-title,
+.pull-quote .quote-mark,
+.pull-quote p {
+  font-synthesis: none;
 }

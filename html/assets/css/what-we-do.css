@@ -1,0 +1,229 @@
+/* ==========================================================================
+   WHAT WE DO: simple layout (loaded after style.css, what_we_do.html only)
+   Same quiet language as the home page: flat surfaces, generous whitespace,
+   the photos carry the page. Colours and fonts come from the style.css tokens.
+   ========================================================================== */
+
+.page-lights .container {
+  max-width: 1120px;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+/* ---------- Intro ---------- */
+.wwd-intro {
+  padding: clamp(48px, 7vw, 88px) 0 clamp(32px, 4vw, 48px);
+  background: var(--bg-page);
+}
+
+.wwd-intro h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  margin: 0 0 18px;
+}
+
+.wwd-intro p {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ---------- Featured photo ---------- */
+.wwd-feature {
+  padding: 0 0 clamp(56px, 8vw, 96px);
+  background: var(--bg-page);
+}
+
+.feature-photo,
+.light-grid a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #140d16;
+  color: #fff3f8;
+}
+
+.feature-photo img,
+.light-grid img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-photo img {
+  height: auto;
+  max-height: 520px;
+}
+
+/* Names sit inside the photo on a dark fade, in the site's handwriting face */
+.feature-photo span,
+.light-grid span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 18px 14px;
+  font-family: var(--font-handwriting);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  background: linear-gradient(to top, rgba(20, 13, 22, 0.85), rgba(20, 13, 22, 0));
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.feature-photo span {
+  font-size: 2.3rem;
+  padding: 64px 24px 18px;
+}
+
+.feature-photo:hover img,
+.feature-photo:focus-visible img,
+.light-grid a:hover img,
+.light-grid a:focus-visible img {
+  transform: scale(1.04);
+}
+
+.feature-link {
+  margin: 14px 0 0;
+}
+
+.feature-link .text-link-arrow {
+  margin-top: 0;
+}
+
+/* ---------- Gallery ---------- */
+.wwd-gallery {
+  padding: clamp(56px, 8vw, 96px) 0 clamp(64px, 9vw, 112px);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.wwd-head {
+  max-width: 62ch;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.wwd-head h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  text-wrap: balance;
+  margin: 0 0 14px;
+}
+
+.wwd-head h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-primary);
+}
+
+.wwd-head p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.light-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.light-grid img {
+  aspect-ratio: 16 / 10;
+}
+
+/* Photo failed to load: keep the card, name only, same 16:10 shape */
+.light-grid a.is-missing {
+  aspect-ratio: 16 / 10;
+}
+
+.light-grid a.is-missing span {
+  inset: 0;
+  display: grid;
+  align-items: end;
+  background: radial-gradient(circle at 50% 40%, #2d182b 0%, #170c16 85%);
+}
+
+/* ---------- Browser surfaces ---------- */
+.page-lights :where(a, button):focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+.page-lights ::selection {
+  background: var(--rose-tint);
+  color: var(--text-headline);
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--text-headline);
+  color: var(--bg-page);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* Calistoga has a single weight and no italic: don't let the browser fake them */
+.wwd-intro h1,
+.wwd-head h2,
+.feature-photo span {
+  font-synthesis: none;
+}
+
+.wwd-noscript {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* No hover zoom for visitors who asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .feature-photo img,
+  .light-grid img {
+    transition: none;
+  }
+
+  .feature-photo:hover img,
+  .feature-photo:focus-visible img,
+  .light-grid a:hover img,
+  .light-grid a:focus-visible img {
+    transform: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  .light-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .light-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .light-grid span {
+    font-size: 1.4rem;
+    padding: 36px 12px 10px;
+  }
+}

@@ -5,9 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desiray's Lights of Joy | Spreading Joy One Light at a Time</title>
   <meta name="description" content="A 501(c)(3) nonprofit donating personalized 30-inch glowing neon signs and battery care kits to brave young warriors undergoing bone marrow and stem cell transplants at Rady Children's Hospital in San Diego.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="assets/images/hero-banner.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calistoga&family=Caveat:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body data-theme="light">
+<body class="home" data-theme="light">
+
+  <!-- Shared icon glyphs (drawn once, referenced with <use>) -->
+  <svg class="icon-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M12 11v6M9 14h6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- NAVIGATION HEADER -->
   <header class="site-header" id="header">
@@ -45,7 +59,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="container hero-grid">
@@ -62,356 +76,199 @@
               <span>Sponsor a Child&rsquo;s Light ($265 / $361)</span>
               <span>&rarr;</span>
             </a>
-            <a href="#gallery" class="btn btn-secondary btn-large">
-              <span>Meet the Young Warriors</span>
-            </a>
-          </div>
-
-          <div class="hero-trust-bar">
-            <div class="trust-item">
-              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V9l8-5 8 5v12"/><path d="M12 11v6M9 14h6"/></svg>
-              <span>Rady Children&rsquo;s Hospital San Diego</span>
-            </div>
-            <div class="trust-item">
-              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
-              <span>501(c)(3) Tax-Deductible</span>
-            </div>
-            <div class="trust-item">
-              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
-              <span>100% Family &amp; Volunteer Run</span>
-            </div>
           </div>
         </div>
 
-        <!-- AUTHENTIC PHOTOGRAPHY FRAME -->
+        <!-- HERO ART: finished composition (photo, watercolour wash, botanicals) on a transparent background -->
         <div class="hero-visual-frame">
-          <div class="hero-photo-card tilt-left">
-            <div class="hero-photo-wrapper">
-              <!-- To swap the photo, just change this src -->
-              <img src="assets/images/desiray-hospital-bedside.png" alt="Desiray at Rady Children's Hospital with her personalized neon sign and heart light" class="hero-real-img">
-              <span class="hero-photo-badge">The Original Keepsake</span>
-
-              <!-- Perimeter fairy lights: decorative, closed loop wrapping the photo's torn-edge frame -->
-              <ul class="hero-fairy-lights" aria-hidden="true">
-                <li class="bulb group-1" style="top:-6px; left:6%;"></li>
-                <li class="bulb group-2" style="top:-11px; left:20%;"></li>
-                <li class="bulb group-3" style="top:-6px; left:34%;"></li>
-                <li class="bulb group-4" style="top:-11px; left:50%;"></li>
-                <li class="bulb group-1" style="top:-6px; left:66%;"></li>
-                <li class="bulb group-2" style="top:-11px; left:80%;"></li>
-                <li class="bulb group-3" style="top:-6px; left:94%;"></li>
-
-                <li class="bulb group-4" style="top:14%; right:-6px;"></li>
-                <li class="bulb group-1" style="top:30%; right:-11px;"></li>
-                <li class="bulb group-2" style="top:46%; right:-6px;"></li>
-                <li class="bulb group-3" style="top:62%; right:-11px;"></li>
-                <li class="bulb group-4" style="top:78%; right:-6px;"></li>
-                <li class="bulb group-1" style="top:94%; right:-11px;"></li>
-
-                <li class="bulb group-2" style="bottom:-6px; left:94%;"></li>
-                <li class="bulb group-3" style="bottom:-11px; left:80%;"></li>
-                <li class="bulb group-4" style="bottom:-6px; left:66%;"></li>
-                <li class="bulb group-1" style="bottom:-11px; left:50%;"></li>
-                <li class="bulb group-2" style="bottom:-6px; left:34%;"></li>
-                <li class="bulb group-3" style="bottom:-11px; left:20%;"></li>
-                <li class="bulb group-4" style="bottom:-6px; left:6%;"></li>
-
-                <li class="bulb group-1" style="top:94%; left:-6px;"></li>
-                <li class="bulb group-2" style="top:78%; left:-11px;"></li>
-                <li class="bulb group-3" style="top:62%; left:-6px;"></li>
-                <li class="bulb group-4" style="top:46%; left:-11px;"></li>
-                <li class="bulb group-1" style="top:30%; left:-6px;"></li>
-                <li class="bulb group-2" style="top:14%; left:-11px;"></li>
-              </ul>
-            </div>
-            <div class="hero-photo-caption">
-              <strong>Desiray&rsquo;s Own Bedside Light</strong>
-              Gifted by her godmother Ms. Robin, this sign brought so much comfort during treatment that our family promised to illuminate the room of every young warrior at Rady.
-            </div>
-          </div>
+          <img class="hero-art" src="assets/images/hero-banner.webp" width="578" height="432" fetchpriority="high" decoding="async" alt="Desiray at Rady Children's Hospital with her personalized neon sign and heart light">
         </div>
       </div>
     </section>
 
-    <!-- ABOUT US / DESIRAY'S STORY SECTION -->
-    <section class="story-section" id="about-us">
+    <!-- OUR STORY -->
+    <section class="s s-story" id="about-us">
       <span id="story"></span>
       <div class="container">
-        <div class="split-header">
-          <div>
-            <span class="kicker">The Heart of Our Foundation</span>
-            <h2 class="section-heading">Meet Desiray Joy &mdash; <em>Our Beloved Pink Buffalo Girl</em></h2>
-          </div>
-          <p class="split-header-lead">
-            A daughter with Down syndrome, an unshakeable spirit, and an enduring legacy of bringing light into the dark.
-          </p>
+        <div class="s-head">
+          <h2>Meet Desiray Joy, <em>our beloved Pink Buffalo Girl</em></h2>
+          <p>A daughter with Down syndrome, an unshakeable spirit, and an enduring legacy of bringing light into the dark.</p>
         </div>
 
-        <div class="story-container-grid">
-          <div class="letter-card">
+        <div class="story-grid">
+          <div class="letter">
             <h3>A Letter from Marlene</h3>
-            <p>
-              Our daughter Desiray passed away about a year after we started <em>Desiray&rsquo;s Lights of Joy</em>. Throughout her life, Desiray lived with Down syndrome and faced intensive hospital stays, culminating in a bone marrow and stem cell transplant. Yet, through every biopsy, infusion, and isolated week, she greeted nurses and doctors with infectious laughter, gentle warmth, and boundless courage.
-            </p>
-            <p>
-              Desiray&rsquo;s favorite color in the whole world was <strong>bright pink</strong>. During her treatment at Rady Children&rsquo;s, her godmother, Ms. Robin, surprised her with a custom, glowing neon wall sign bearing her name. That pink light transformed her room &mdash; day and night, it created a cheerful sanctuary that comforted Desiray and brought smiles to every passerby and nurse in the corridor.
-            </p>
-            <p>
-              In our family and at Comic-Con events, Desiray became known as the <strong>&ldquo;Pink Buffalo Girl&rdquo;</strong> &mdash; rocking her pink checkered overalls, satin cape, and radiating fearless kindness. We founded this 501(c)(3) nonprofit to ensure that no child undergoing bone marrow or stem cell therapy has to endure a dark, sterile hospital room without their own personal beacon of hope.
-            </p>
-            <div class="letter-sign-off">
-              With all our love and gratitude, <br>
+            <p>Our daughter Desiray passed away about a year after we started <em>Desiray&rsquo;s Lights of Joy</em>. Throughout her life, Desiray lived with Down syndrome and faced intensive hospital stays, culminating in a bone marrow and stem cell transplant. Yet, through every biopsy, infusion, and isolated week, she greeted nurses and doctors with infectious laughter, gentle warmth, and boundless courage.</p>
+            <p>Desiray&rsquo;s favorite color in the whole world was <strong>bright pink</strong>. During her treatment at Rady Children&rsquo;s, her godmother, Ms. Robin, surprised her with a custom, glowing neon wall sign bearing her name. That pink light transformed her room &mdash; day and night, it created a cheerful sanctuary that comforted Desiray and brought smiles to every passerby and nurse in the corridor.</p>
+            <p>In our family and at Comic-Con events, Desiray became known as the <strong>&ldquo;Pink Buffalo Girl&rdquo;</strong> &mdash; rocking her pink checkered overalls, satin cape, and radiating fearless kindness. We founded this 501(c)(3) nonprofit to ensure that no child undergoing bone marrow or stem cell therapy has to endure a dark, sterile hospital room without their own personal beacon of hope.</p>
+            <p class="sign-off">
+              With all our love and gratitude,<br>
               <strong>Marlene Davis &amp; Family</strong>
               <span>Founders, Desiray&rsquo;s Lights of Joy</span>
-            </div>
+            </p>
           </div>
 
-          <div class="story-sidebar-photos">
-            <div class="photo-polaroid">
-              <img src="assets/images/cataleya-bedside-light.png" alt="Cataleya holding her personalized glowing neon sign at her hospital bedside">
-              <div class="polaroid-caption">
-                <strong>Bedside Comfort at Rady Children&rsquo;s</strong>
-                Every sign reminds our young warriors they are cherished and never fighting alone.
-              </div>
-            </div>
-
-            <div class="photo-polaroid">
-              <img src="assets/images/desiray-tribute-sign.png" alt="Marlene and a loved one smiling while holding a neon sign reading Desiray with a heart">
-              <div class="polaroid-caption">
-                <strong>In Desiray&rsquo;s Memory</strong>
-                Family and friends carry her light forward at every community gathering we hold.
-              </div>
-            </div>
+          <div class="story-photos">
+            <figure>
+              <img src="assets/images/cataleya-bedside-light.png" alt="Cataleya holding her personalized glowing neon sign at her hospital bedside" loading="lazy">
+              <figcaption><strong>Bedside comfort at Rady Children&rsquo;s.</strong> Every sign reminds our young warriors they are cherished and never fighting alone.</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/desiray-tribute-sign.png" alt="Marlene and a loved one smiling while holding a neon sign reading Desiray with a heart" loading="lazy">
+              <figcaption><strong>In Desiray&rsquo;s memory.</strong> Family and friends carry her light forward at every community gathering we hold.</figcaption>
+            </figure>
           </div>
         </div>
-
-        <blockquote class="pull-quote">
-          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-          <p>Her favorite color in the whole world was bright pink &mdash; and that one glowing sign turned a hospital room into a sanctuary.</p>
-          <cite>From Marlene&rsquo;s Letter, Founder</cite>
-        </blockquote>
       </div>
     </section>
 
-    <!-- WHAT WE DO SECTION -->
-    <section class="how-it-works-section" id="what-we-do">
+    <!-- HOW YOUR GIFT WORKS -->
+    <section class="s s-alt" id="what-we-do">
       <span id="how-it-works"></span>
       <div class="container">
-        <div class="split-header">
-          <p class="split-header-lead">A simple, transparent journey connecting donors directly to bedside comfort &mdash; from the first referral to the day the light goes home.</p>
+        <div class="steps-layout">
+        <div class="s-head">
+          <h2>From hospital admission to <em>forever keepsake</em></h2>
+          <p>A simple, transparent journey connecting donors directly to bedside comfort &mdash; from the first referral to the day the light goes home.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-n">1</span>
+            <h3>Hospital Referral</h3>
+            <p>Compassionate social workers and nurses at Rady Children&rsquo;s Hospital identify young warriors admitted for transplant treatment.</p>
+          </li>
+          <li>
+            <span class="step-n">2</span>
+            <h3>Personalized Design</h3>
+            <p>We discover each child&rsquo;s favorite color and nickname. Local artisans craft a safe, low-voltage 30&Prime; LED neon sign tailored specifically to them.</p>
+          </li>
+          <li>
+            <span class="step-n">3</span>
+            <h3>Bedside Illumination</h3>
+            <p>We deliver the light with an optional rechargeable battery so the child can keep their sign glowing even during corridor walks with IV poles.</p>
+          </li>
+          <li>
+            <span class="step-n">4</span>
+            <h3>Home Sweet Home</h3>
+            <p>When treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang proudly as a lifelong medal of bravery.</p>
+          </li>
+        </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTS DONATED (preview; full gallery on what_we_do) -->
+    <section class="s" id="gallery">
+      <div class="container">
+        <div class="s-head s-head--row">
           <div>
-            <span class="kicker">How Your Gift Works</span>
-            <h2 class="section-heading">From Hospital Admission to <em>Forever Keepsake</em></h2>
+            <h2>Lights we have <em>donated so far</em></h2>
+            <p>A glimpse of the personalized neon signs we&rsquo;ve gifted to pediatric patients at Rady Children&rsquo;s Hospital. Click any light for a closer look.</p>
           </div>
+          <a href="/what_we_do" class="text-link">View the full gallery &rarr;</a>
         </div>
 
-        <div class="steps-flow">
-          <div class="steps-timeline-grid">
-            <div class="step-box">
-              <span class="step-count">Step 01</span>
-              <h4>Hospital Referral</h4>
-              <p>Compassionate social workers and nurses at Rady Children&rsquo;s Hospital identify young warriors admitted for transplant treatment.</p>
-            </div>
-
-            <div class="step-box">
-              <span class="step-count">Step 02</span>
-              <h4>Personalized Design</h4>
-              <p>We discover each child&rsquo;s favorite color and nickname. Local artisans craft a safe, low-voltage 30&Prime; LED neon sign tailored specifically to them.</p>
-            </div>
-
-            <div class="step-box">
-              <span class="step-count">Step 03</span>
-              <h4>Bedside Illumination</h4>
-              <p>We deliver the light with an optional rechargeable battery so the child can keep their sign glowing even during corridor walks with IV poles.</p>
-            </div>
-
-            <div class="step-box">
-              <span class="step-count">Step 04</span>
-              <h4>Home Sweet Home</h4>
-              <p>When treatment is completed and they ring the hospital victory bell, the neon sign travels home to hang proudly as a lifelong medal of bravery.</p>
-            </div>
-          </div>
+        <div class="gallery">
+          <a href="/light/lily"><img src="assets/images/what-we-do/lily.jpg" alt="Lily's personalized neon sign" loading="lazy"><span>Lily</span></a>
+          <a href="/light/cataleya"><img src="assets/images/what-we-do/cataleya.jpg" alt="Cataleya's personalized neon sign" loading="lazy"><span>Cataleya</span></a>
+          <a href="/light/gonebey"><img src="assets/images/what-we-do/gonebey.jpg" alt="Gonebey's personalized neon sign" loading="lazy"><span>Gonebey</span></a>
+          <a href="/light/zachary"><img src="assets/images/what-we-do/zachary.jpg" alt="Zachary's personalized neon sign" loading="lazy"><span>Zachary</span></a>
+          <a href="/light/alex"><img src="assets/images/what-we-do/alex.jpg" alt="Alex's personalized neon sign" loading="lazy"><span>Alex</span></a>
+          <a href="/light/jacob-e"><img src="assets/images/what-we-do/jacob.jpg" alt="Jacob's personalized neon sign" loading="lazy"><span>Jacob E.</span></a>
         </div>
       </div>
     </section>
 
-    <!-- LIGHTS WE HAVE DONATED SO FAR (preview — full gallery on what_we_do.html) -->
-    <section class="gallery-section" id="gallery">
+    <!-- SPONSOR A LIGHT -->
+    <section class="s s-alt" id="donate">
       <div class="container">
-        <div class="split-header">
+        <div class="donate-grid">
           <div>
-            <span class="kicker">Our Young Warriors</span>
-            <h2 class="section-heading">Lights We Have <em>Donated So Far</em></h2>
-          </div>
-          <p class="split-header-lead">
-            A glimpse of the personalized neon signs we&rsquo;ve gifted to pediatric patients at Rady Children&rsquo;s Hospital. Click any light for a closer look.
-            <br><a href="/what_we_do" class="text-link-arrow">View the Full Gallery &rarr;</a>
-          </p>
-        </div>
+            <h2>Bring hope to a child&rsquo;s <em>hospital room</em></h2>
+            <p class="lead">Your charitable gift directly funds the personalized craftsmanship and hospital delivery of custom neon lights for young patients facing life-threatening conditions at Rady Children&rsquo;s Hospital.</p>
 
-        <div class="lights-card-grid bento">
-          <a class="real-light-card featured" href="/light/lily">
-            <img src="assets/images/what-we-do/lily.jpg" alt="Lily's personalized neon sign" loading="lazy">
-            <div class="real-light-name">Lily</div>
-          </a>
-          <a class="real-light-card" href="/light/cataleya">
-            <img src="assets/images/what-we-do/cataleya.jpg" alt="Cataleya's personalized neon sign" loading="lazy">
-            <div class="real-light-name">Cataleya</div>
-          </a>
-          <a class="real-light-card" href="/light/gonebey">
-            <img src="assets/images/what-we-do/gonebey.jpg" alt="Gonebey's personalized neon sign" loading="lazy">
-            <div class="real-light-name">Gonebey</div>
-          </a>
-          <a class="real-light-card featured" href="/light/zachary">
-            <img src="assets/images/what-we-do/zachary.jpg" alt="Zachary's personalized neon sign" loading="lazy">
-            <div class="real-light-name">Zachary</div>
-          </a>
-          <a class="real-light-card" href="/light/alex">
-            <img src="assets/images/what-we-do/alex.jpg" alt="Alex's personalized neon sign" loading="lazy">
-            <div class="real-light-name">Alex</div>
-          </a>
-          <a class="real-light-card" href="/light/jacob-e">
-            <img src="assets/images/what-we-do/jacob.jpg" alt="Jacob's personalized neon sign" loading="lazy">
-            <div class="real-light-name">Jacob E.</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- DONATION FEATURE SECTION (Direct & Honest) -->
-    <section class="donation-feature-section" id="donate">
-      <div class="container">
-        <div class="donation-grid-layout">
-          <div class="donation-story-col">
-            <span class="eyebrow">Sponsor a Light</span>
-            <h3>Bring Hope to a Child&rsquo;s Hospital Room</h3>
-            <p>
-              Your charitable gift directly funds the personalized craftsmanship and hospital delivery of custom neon lights for young patients facing life-threatening conditions at Rady Children&rsquo;s Hospital.
-            </p>
-
-            <div class="official-tier-cards">
-              <div class="tier-card-item">
-                <div class="tier-price-box">
-                  <strong>$361</strong>
-                  <span>Full Set</span>
-                </div>
-                <div class="tier-info-box">
-                  <h5>Complete Warrior Care Set</h5>
-                  <p>1 Personalized 30&Prime; Neon Sign + 1 Rechargeable Medical-Grade Battery for hallway mobility.</p>
-                </div>
+            <dl class="tiers">
+              <div>
+                <dt>$361</dt>
+                <dd><strong>Complete Warrior Care Set</strong>1 personalized 30&Prime; neon sign + 1 rechargeable medical-grade battery for hallway mobility.</dd>
               </div>
-
-              <div class="tier-card-item">
-                <div class="tier-price-box">
-                  <strong>$265</strong>
-                  <span>Sign Only</span>
-                </div>
-                <div class="tier-info-box">
-                  <h5>Personalized 30&Prime; Neon Sign Only</h5>
-                  <p>Hand-crafted with the child&rsquo;s name, favorite color, and safe bedside low-voltage adapter.</p>
-                </div>
+              <div>
+                <dt>$265</dt>
+                <dd><strong>Personalized 30&Prime; Neon Sign Only</strong>Hand-crafted with the child&rsquo;s name, favorite color, and safe bedside low-voltage adapter.</dd>
               </div>
-
-              <div class="tier-card-item">
-                <div class="tier-price-box">
-                  <strong>$100</strong>
-                  <span>Co-Sponsor</span>
-                </div>
-                <div class="tier-info-box">
-                  <h5>Army of Friends Contribution</h5>
-                  <p>Pool your donation with friends or coworkers to co-sponsor an upcoming patient sign.</p>
-                </div>
+              <div>
+                <dt>$100</dt>
+                <dd><strong>Army of Friends Contribution</strong>Pool your donation with friends or coworkers to co-sponsor an upcoming patient sign.</dd>
               </div>
-            </div>
+            </dl>
 
-            <p style="font-size: 0.92rem; color: var(--text-muted);">
-              Want zero platform processing fees? Send directly through <strong>Zelle</strong> to: <br>
-              <strong style="color: #7414ca; font-size: 1.05rem;">marlene@desirayslightsofjoy.org</strong>
-              &mdash; or just scan the QR code &rarr;
+            <p class="note">
+              Want zero platform processing fees? Send directly through <strong>Zelle</strong> to
+              <a href="mailto:marlene@desirayslightsofjoy.org">marlene@desirayslightsofjoy.org</a>
+              &mdash; or scan the QR code.
             </p>
           </div>
 
-          <!-- Real Giving Box: PayPal buttons + Zelle QR (matches donate.html) -->
-          <div class="donation-interactive-box">
-            <h4 class="form-box-title">Give Directly</h4>
-            <p class="form-box-sub">Tax-deductible 501(c)(3) contribution &mdash; any amount welcome</p>
+          <div class="give">
+            <h3>Give directly</h3>
+            <p class="muted">Tax-deductible 501(c)(3) contribution &mdash; any amount welcome.</p>
 
-            <p class="input-label" style="text-align: center; margin-bottom: 10px;">Not ready for a full light? Give what you can:</p>
-            <div class="amount-select-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 22px;">
-              <a href="#homeZelleQr" class="amount-tile" data-amount="5"><strong>$5</strong></a>
-              <a href="#homeZelleQr" class="amount-tile" data-amount="10"><strong>$10</strong></a>
-              <a href="#homeZelleQr" class="amount-tile" data-amount="25"><strong>$25</strong></a>
-              <a href="#homeZelleQr" class="amount-tile" data-amount="50"><strong>$50</strong></a>
+            <a href="https://www.paypal.com/ncp/payment/ACYPDUG7N4VPY" target="_blank" rel="noopener" class="btn btn-primary give-btn">Complete Set ($361) &rarr;</a>
+            <a href="https://www.paypal.com/ncp/payment/S37DXK58DRXBE" target="_blank" rel="noopener" class="btn btn-secondary give-btn">Neon Sign Only ($265) &rarr;</a>
+
+            <p class="give-label">Or give what you can through Zelle:</p>
+            <div class="amount-select-grid" role="group" aria-label="Choose a Zelle amount">
+              <button type="button" class="amount-tile" data-amount="5" aria-pressed="false"><strong>$5</strong></button>
+              <button type="button" class="amount-tile" data-amount="10" aria-pressed="false"><strong>$10</strong></button>
+              <button type="button" class="amount-tile" data-amount="25" aria-pressed="false"><strong>$25</strong></button>
+              <button type="button" class="amount-tile" data-amount="50" aria-pressed="false"><strong>$50</strong></button>
+            </div>
+            <p class="amount-note" id="selectedAmountNote" aria-live="polite"></p>
+
+            <p class="muted" id="homeZelleQr">Scan to pay with Zelle:</p>
+            <div class="qr">
+              <img src="assets/images/zelle-qrcode.png" alt="Scan this Zelle QR code to pay Desiray's Lights of Joy" loading="lazy">
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
-              <a href="https://www.paypal.com/ncp/payment/ACYPDUG7N4VPY" target="_blank" rel="noopener" class="btn btn-primary btn-neon-glow pkg-btn" style="width: 100%;">
-                Complete Set ($361) &bull; Click here to donate &rarr;
-              </a>
-              <a href="https://www.paypal.com/ncp/payment/S37DXK58DRXBE" target="_blank" rel="noopener" class="btn btn-secondary pkg-btn" style="width: 100%;">
-                Neon Sign Only ($265) &bull; Click here to donate &rarr;
-              </a>
-            </div>
-
-            <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;" id="homeZelleQr">
-              Or donate any amount through Zelle &mdash; scan to pay:
+            <p class="trust">
+              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg>
+              Official 501(c)(3) tax-deductible charity
             </p>
-            <p id="selectedAmountNote" style="text-align: center; font-size: 0.88rem; color: var(--rose-primary); font-weight: 700; min-height: 1.3em; margin-bottom: 10px;"></p>
-
-            <div style="max-width: 220px; margin: 0 auto 20px; background: #fff; border-radius: 9px; padding: 14px; box-shadow: var(--shadow-card);">
-              <img src="assets/images/zelle-qrcode.png" alt="Scan this Zelle QR code to pay Desiray's Lights of Joy" style="width: 100%; height: auto; display: block; border-radius: 6px;">
-            </div>
-
-            <div class="security-trust-note">
-              <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 5.5V11c0 4.5 3 7.7 7 9.5 4-1.8 7-5 7-9.5V5.5L12 3Z"/><path d="M9.2 12.2l1.9 1.9 3.7-3.9"/></svg>
-              Official 501(c)(3) Tax-Deductible Charity
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WALL OF HOPE / GUESTBOOK -->
-    <section class="wall-section" id="wall-of-hope">
+    <!-- WALL OF HOPE -->
+    <section class="s" id="wall-of-hope">
       <div class="container">
-        <div style="text-align: center;">
-          <span class="eyebrow">Community Messages</span>
-          <h2 class="section-heading">The Wall of <em>Hope &amp; Love</em></h2>
-          <p class="section-lead">
-            Leave an encouraging note, prayer, or warm thought for the brave young warriors and families at Rady Children&rsquo;s Hospital.
-          </p>
+        <div class="s-head">
+          <h2>The wall of <em>hope &amp; love</em></h2>
+          <p>Leave an encouraging note, prayer, or warm thought for the brave young warriors and families at Rady Children&rsquo;s Hospital.</p>
         </div>
 
-        <div class="wall-layout">
-          <div class="guestbook-form-card">
-            <h3>Leave a Message of Hope</h3>
-            <p>Your words bring smiles to bedside rooms just like the neon signs!</p>
-
+        <div class="wall-grid">
+          <div class="panel">
+            <h3>Leave a message of hope</h3>
             <form id="messageForm">
               <div class="field-group">
-                <label for="msgSender" class="input-label">Your Name</label>
+                <label for="msgSender" class="input-label">Your name</label>
                 <input type="text" id="msgSender" class="field-control" placeholder="e.g. Sarah &amp; Family" required>
               </div>
-
               <div class="field-group">
-                <label for="msgLocation" class="input-label">Your City &amp; State</label>
+                <label for="msgLocation" class="input-label">Your city &amp; state</label>
                 <input type="text" id="msgLocation" class="field-control" placeholder="e.g. San Diego, CA or Dallas, TX">
               </div>
-
               <div class="field-group">
-                <label for="msgChildDedication" class="input-label">Dedication (Optional)</label>
-                <input type="text" id="msgChildDedication" class="field-control" placeholder="e.g. For All Brave Warriors or For Sophia">
+                <label for="msgChildDedication" class="input-label">Dedication (optional)</label>
+                <input type="text" id="msgChildDedication" class="field-control" placeholder="e.g. For all brave warriors or For Sophia">
               </div>
-
               <div class="field-group">
-                <label for="msgText" class="input-label">Your Message</label>
+                <label for="msgText" class="input-label">Your message</label>
                 <textarea id="msgText" class="field-control" rows="4" placeholder="You are so strong, and we are cheering for you every single day!" required></textarea>
               </div>
-
-              <button type="submit" class="btn btn-primary btn-neon-glow" style="width: 100%;">
-                <svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-10-9.3C.6 8 2 4.5 5.4 4c2-.3 3.8.6 5 2.2C11.6 4.6 13.4 3.7 15.4 4c3.4.5 4.8 4 3.4 7.2-2.5 4.7-10 9.3-10 9.3Z"/></svg>
-                <span>Post Message to Wall of Hope</span>
-              </button>
+              <button type="submit" class="btn btn-primary">Post message to the wall</button>
             </form>
           </div>
 
@@ -422,50 +279,36 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="story-section" id="contact" style="border-top: 1px solid var(--border-subtle);">
-      <div class="container" style="max-width: 1000px;">
-        <div class="split-header" style="margin-bottom: 40px;">
+    <!-- CONTACT -->
+    <section class="s s-alt" id="contact">
+      <div class="container">
+        <div class="contact-grid">
           <div>
-            <span class="kicker">Get In Touch</span>
-            <h2 class="section-heading">Connect with <em>Our Board</em></h2>
-          </div>
-          <p class="split-header-lead">
-            Have questions about sponsoring a patient, nominating a young warrior, or helping us expand to another hospital? We would love to hear from you.
-          </p>
-        </div>
+            <h2>Connect with <em>our board</em></h2>
+            <p class="lead">Have questions about sponsoring a patient, nominating a young warrior, or helping us expand to another hospital? We would love to hear from you.</p>
 
-        <div class="contact-split-grid">
-          <div class="contact-info-col">
-            <div class="contact-info-item">
-              <span class="contact-info-label">Email Marlene Directly</span>
-              <p class="contact-info-value">
-                <a href="mailto:marlene@desirayslightsofjoy.org">marlene@desirayslightsofjoy.org</a>
-              </p>
-            </div>
+            <p class="contact-label">Email Marlene directly</p>
+            <p><a class="contact-mail" href="mailto:marlene@desirayslightsofjoy.org">marlene@desirayslightsofjoy.org</a></p>
 
-            <div class="contact-info-item">
-              <span class="contact-info-label">Hospital Partner</span>
-              <p style="font-size: 1rem; color: var(--text-body); margin: 4px 0 0;">
-                Rady Children&rsquo;s Hospital &bull; Pediatric Bone Marrow &amp; Stem Cell Unit &bull; San Diego, CA
-              </p>
-            </div>
+            <p class="contact-label">Hospital partner</p>
+            <p>Rady Children&rsquo;s Hospital &bull; Pediatric Bone Marrow &amp; Stem Cell Unit &bull; San Diego, CA</p>
           </div>
 
-          <div class="contact-form-card">
+          <div class="panel">
             <form id="contactForm">
               <div class="field-group">
-                <input type="text" id="cName" class="field-control" placeholder="Your Name" required>
+                <label for="cName" class="input-label">Your name</label>
+                <input type="text" id="cName" class="field-control" placeholder="Your name" required>
               </div>
               <div class="field-group">
-                <input type="email" id="cEmail" class="field-control" placeholder="Your Email" required>
+                <label for="cEmail" class="input-label">Your email</label>
+                <input type="email" id="cEmail" class="field-control" placeholder="you@example.com" required>
               </div>
               <div class="field-group">
-                <textarea id="cMessage" class="field-control" rows="3" placeholder="How can we assist or collaborate?" required></textarea>
+                <label for="cMessage" class="input-label">Message</label>
+                <textarea id="cMessage" class="field-control" rows="4" placeholder="How can we assist or collaborate?" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-neon-glow" style="width: 100%;">
-                Send Message &rarr;
-              </button>
+              <button type="submit" class="btn btn-primary">Send message &rarr;</button>
             </form>
           </div>
         </div>
@@ -488,7 +331,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Navigation</h4>
+          <h3 class="footer-col-title">Navigation</h3>
           <ul class="footer-links-list">
             <li><a href="/what_we_do">What We Do</a></li>
             <li><a href="/about">About Us</a></li>
@@ -498,7 +341,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">Ways to Give</h4>
+          <h3 class="footer-col-title">Ways to Give</h3>
           <ul class="footer-links-list">
             <li><a href="https://www.paypal.com/ncp/payment/ACYPDUG7N4VPY" target="_blank" rel="noopener">Complete Set ($361)</a></li>
             <li><a href="https://www.paypal.com/ncp/payment/S37DXK58DRXBE" target="_blank" rel="noopener">Neon Sign Only ($265)</a></li>
@@ -507,7 +350,7 @@
         </div>
 
         <div>
-          <h4 class="footer-col-title">501(c)(3) Transparency</h4>
+          <h3 class="footer-col-title">501(c)(3) Transparency</h3>
           <div class="footer-tax-box">
             Desiray&rsquo;s Lights of Joy is an official 501(c)(3) tax-exempt public charity incorporated in September 2024. All charitable gifts are tax-deductible to the fullest extent permitted by U.S. law.
           </div>
@@ -525,6 +368,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

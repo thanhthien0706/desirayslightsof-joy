@@ -1,0 +1,691 @@
+/* ==========================================================================
+   HOME PAGE: simple, quiet layout (loaded after style.css, index.html only)
+   Flat surfaces, hairlines instead of heavy borders, one rhythm of whitespace.
+   Colors, fonts and dark mode all come from the tokens in style.css.
+   ========================================================================== */
+
+body.home {
+  --gutter: clamp(20px, 4vw, 40px);
+}
+
+.home .container {
+  max-width: 1120px;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Hero: same content, calmer ground ---------- */
+.home .hero-section {
+  background: var(--bg-page);
+  padding: clamp(40px, 6vw, 80px) 0 clamp(24px, 4vw, 48px);
+}
+
+.home .hero-trust-bar {
+  border-top: 0;
+  padding-top: 0;
+  gap: 8px 24px;
+}
+
+/* ---------- Section frame ---------- */
+.s {
+  padding-block: clamp(64px, 9vw, 112px);
+  background: var(--bg-page);
+}
+
+.s-alt {
+  background: var(--bg-surface);
+  border-block: 1px solid var(--border-subtle);
+}
+
+.s h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--text-headline);
+  text-wrap: balance;
+  margin: 0 0 16px;
+}
+
+.s h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--rose-primary);
+}
+
+.s h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-headline);
+  margin: 0 0 12px;
+}
+
+.s p {
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.s-head {
+  max-width: 62ch;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.s-head p,
+.s .lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.s-head--row {
+  max-width: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+}
+
+.s-head--row > div {
+  max-width: 62ch;
+}
+
+.text-link {
+  font-weight: 700;
+  color: var(--rose-text);
+  white-space: nowrap;
+}
+
+.text-link:hover {
+  color: var(--rose-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.muted {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Story ---------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.letter p {
+  font-size: 1.04rem;
+  margin: 0 0 1.1em;
+  max-width: 66ch;
+}
+
+.letter strong {
+  color: var(--text-headline);
+}
+
+.s .sign-off {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sign-off strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin-top: 4px;
+}
+
+.sign-off span {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.story-photos {
+  display: grid;
+  gap: 28px;
+}
+
+.story-photos figure {
+  margin: 0;
+}
+
+.story-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.story-photos figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.story-photos figcaption strong {
+  color: var(--text-headline);
+}
+
+.quote {
+  margin: clamp(56px, 8vw, 96px) auto 0;
+  max-width: 780px;
+  text-align: center;
+}
+
+.quote p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.45;
+  color: var(--text-headline);
+  text-wrap: balance;
+  margin: 0 0 16px;
+}
+
+.quote p strong {
+  font-weight: inherit;
+  color: var(--rose-text);
+}
+
+.quote cite {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Steps ----------
+   Heading on the left, the four steps read top to bottom on the right,
+   joined by one rail so the order is the structure. */
+.steps-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: start;
+}
+
+.steps-layout .s-head {
+  margin-bottom: 0;
+  position: sticky;
+  top: 112px;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.steps li {
+  position: relative;
+  padding: 0 0 clamp(28px, 4vw, 44px) 72px;
+}
+
+.steps li:last-child {
+  padding-bottom: 0;
+}
+
+/* rail runs from this circle down to the next one, and stops after the last */
+.steps li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 48px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--border-subtle);
+}
+
+.step-n {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--rose-primary);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  box-shadow: 0 0 0 6px var(--bg-surface);
+}
+
+.steps h3 {
+  padding-top: 8px;
+}
+
+.steps p {
+  font-size: 1rem;
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* ---------- Gallery ----------
+   12-col grid: 7+5 / 5+7 / 6+6. Every row fills, equal image height per row,
+   so the wide and narrow tiles alternate without a hole. */
+.gallery {
+  --gallery-h: clamp(190px, 21vw, 280px);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px) clamp(16px, 2vw, 24px);
+}
+
+.gallery a {
+  grid-column: span 6;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #140d16;
+  color: #fff3f8;
+}
+
+.gallery a:nth-child(1),
+.gallery a:nth-child(4) { grid-column: span 7; }
+.gallery a:nth-child(2),
+.gallery a:nth-child(3) { grid-column: span 5; }
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: var(--gallery-h);
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Name sits inside the photo, on a dark fade so it stays readable on any sign */
+.gallery span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 18px 14px;
+  font-family: var(--font-handwriting);
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1;
+  background: linear-gradient(to top, rgba(20, 13, 22, 0.85), rgba(20, 13, 22, 0));
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.gallery a:hover img,
+.gallery a:focus-visible img {
+  transform: scale(1.04);
+}
+
+.gallery a:focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+/* ---------- Donate ---------- */
+.donate-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.tiers {
+  margin: 32px 0 28px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tiers > div {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tiers dt {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--rose-text);
+}
+
+.tiers dd {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.tiers dd strong {
+  display: block;
+  font-size: 1.02rem;
+  color: var(--text-headline);
+  margin-bottom: 2px;
+}
+
+.s .note {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.note a {
+  color: var(--rose-text);
+  font-weight: 700;
+}
+
+.give,
+.panel {
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: clamp(22px, 3vw, 36px);
+}
+
+.s:not(.s-alt) .panel {
+  background: var(--bg-surface);
+}
+
+.give .btn,
+.panel .btn {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+.give-btn {
+  display: flex;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.give > .muted {
+  margin: 0 0 20px;
+}
+
+.s .give-label {
+  margin: 28px 0 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-headline);
+}
+
+.give .amount-select-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.give .amount-tile {
+  width: 100%;
+  font: inherit;
+  border-width: 1px;
+  padding: 12px 4px;
+}
+
+.give .amount-tile:focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 2px;
+}
+
+.give .amount-tile[aria-pressed="true"] {
+  border-color: var(--rose-primary);
+  background: var(--rose-soft);
+}
+
+.give .amount-tile:hover,
+.give .amount-tile.active {
+  transform: none;
+  box-shadow: none;
+}
+
+.s .amount-note {
+  min-height: 1.4em;
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--rose-text);
+}
+
+.qr {
+  width: 200px;
+  max-width: 100%;
+  margin: 10px 0 20px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.s .trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.trust .icon-inline {
+  color: var(--rose-text);
+}
+
+/* ---------- Wall of hope ---------- */
+.wall-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.wall-grid .wall-notes-stream {
+  max-height: 640px;
+  gap: 14px;
+  padding-right: 8px;
+}
+
+.home .sticky-note-card {
+  border-width: 1px;
+  box-shadow: none;
+  padding: 18px 20px;
+}
+
+.home .sticky-note-card:hover {
+  transform: none;
+}
+
+.panel .field-group:last-of-type {
+  margin-bottom: 20px;
+}
+
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.s .contact-label {
+  margin: 32px 0 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.contact-mail {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--rose-text);
+  overflow-wrap: anywhere;
+}
+
+.contact-mail:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .steps-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-layout .s-head {
+    position: static;
+    margin-bottom: 36px;
+  }
+
+  .gallery { --gallery-h: clamp(160px, 26vw, 240px); }
+}
+
+@media (max-width: 800px) {
+  .story-grid,
+  .donate-grid,
+  .wall-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .story-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .tiers > div {
+    grid-template-columns: 4.5rem 1fr;
+  }
+}
+
+.home .field-control {
+  font-family: var(--font-sans);
+}
+
+@media (max-width: 560px) {
+  .gallery { display: flex; flex-direction: column; --gallery-h: auto; }
+  .gallery img { height: auto; aspect-ratio: 16 / 10; }
+}
+
+/* ---------- Browser surfaces ---------- */
+/* One themed keyboard focus ring for every link and button on the page.
+   :where() keeps it low-priority so component-specific rings still win. */
+.home :where(a, button, summary):focus-visible {
+  outline: 2px solid var(--rose-primary);
+  outline-offset: 3px;
+}
+
+.home ::selection {
+  background: var(--rose-tint);
+  color: var(--text-headline);
+}
+
+/* ---------- Hero art ----------
+   One finished PNG (transparent background), so it just needs to scale and centre. */
+.home .hero-visual-frame {
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.hero-art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Inline icon sprite (index.html): takes no space, only supplies <symbol>s */
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Same rule for the home page serif elements (Calistoga has no bold or italic) */
+.s h2,
+.s h3,
+.sign-off strong,
+.quote p,
+.step-n,
+.tiers dt,
+.contact-mail {
+  font-synthesis: none;
+}
+
+/* ---------- Polish: skip link, hero trust list, tablet-landscape hero ---------- */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 3000;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--text-headline);
+  color: var(--bg-page);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* Three short claims read as a tidy list, not a 2 + 1 wrap */
+.home .hero-trust-bar {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Two columns: the art column is a touch wider than the copy so the picture and the
+   headline block carry the same visual weight; both centre on one horizontal axis.
+   (style.css stacks the hero at 1024px, so re-open two columns from 861px up.) */
+@media (min-width: 861px) {
+  .home .hero-grid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(32px, 4vw, 64px);
+    align-items: center;
+  }
+}
+
+/* The button is the last thing in the copy block: no trailing margin, so the block
+   centres on the art's axis exactly. */
+.home .hero-actions {
+  margin-bottom: 0;
+}
+
+/* Stacked (phones): centre the art under the copy instead of leaving it flush left */
+@media (max-width: 860px) {
+  .home .hero-grid {
+    gap: 32px;
+  }
+
+  .home .hero-visual-frame {
+    max-width: 480px;
+  }
+}
+
+/* No hover zoom for visitors who asked for less motion (home gallery) */
+@media (prefers-reduced-motion: reduce) {
+  .gallery img {
+    transition: none;
+  }
+
+  .gallery a:hover img,
+  .gallery a:focus-visible img {
+    transform: none;
+  }
+}

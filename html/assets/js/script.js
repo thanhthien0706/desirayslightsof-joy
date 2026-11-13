@@ -1,10 +1,11 @@
 /**
  * DESIRAY'S LIGHTS OF JOY (DLOJ) - OFFICIAL JAVASCRIPT
  * 100% Pure Vanilla JS (Zero External Libraries, Zero Frameworks)
- * Works seamlessly across index.html & donate.html
+ * Shared by every page
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+
   // ==========================================
   // 4. LIGHTS OFF MODE TOGGLE (soft pink by default, dark neon-glow mode on request)
   // ==========================================
@@ -147,12 +148,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // 8b. QUICK AMOUNT TILES (donate.html — smaller gift options)
   // ==========================================
   const amountNote = document.getElementById("selectedAmountNote");
+  // Announce the chosen amount to screen readers when the note text changes
+  if (amountNote) amountNote.setAttribute("aria-live", "polite");
   document.querySelectorAll(".amount-tile[data-amount]").forEach((tile) => {
     tile.addEventListener("click", () => {
-      document.querySelectorAll(".amount-tile[data-amount]").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".amount-tile[data-amount]").forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-pressed", "false");
+      });
       tile.classList.add("active");
+      tile.setAttribute("aria-pressed", "true");
       if (amountNote) {
         amountNote.textContent = `You selected $${tile.getAttribute("data-amount")} — send that amount below. Thank you!`;
+      }
+      // Tiles that are real <button>s (home page) don't jump to the QR code
+      // like the <a href="#..."> tiles do, so bring it into view the same way.
+      if (tile.tagName === "BUTTON") {
+        const qr = document.getElementById("homeZelleQr");
+        const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (qr) qr.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" });
       }
     });
   });
